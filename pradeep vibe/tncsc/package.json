@@ -1,0 +1,19 @@
+{
+    "name": "tncsc-system",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node backend/index.js",
+        "dev": "npm run dev --prefix frontend",
+        "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+        "deploy": "git push render main"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "cors": "^2.8.5",
+        "axios": "^1.6.2"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
