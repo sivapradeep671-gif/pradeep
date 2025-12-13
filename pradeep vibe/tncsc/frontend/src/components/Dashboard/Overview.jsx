@@ -41,13 +41,33 @@ const KPICard = ({ title, value, subtext, trend, trendValue, icon: Icon, color }
 );
 
 const RiskTable = () => {
-    const data = [
-        { id: 1, name: 'Thanjavur Main', district: 'Thanjavur', commodity: 'Paddy', score: 85, days: 145, status: 'High Risk' },
-        { id: 2, name: 'Mannargudi G1', district: 'Tiruvarur', commodity: 'Rice', score: 78, days: 120, status: 'High Risk' },
-        { id: 3, name: 'Nagapattinam Central', district: 'Nagapattinam', commodity: 'Paddy', score: 72, days: 98, status: 'Guide' },
-        { id: 4, name: 'Trichy Buffer', district: 'Trichy', commodity: 'Wheat', score: 65, days: 60, status: 'Medium' },
-        { id: 5, name: 'Madurai North', district: 'Madurai', commodity: 'Sugar', score: 45, days: 30, status: 'Low' },
-    ];
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchRisks = async () => {
+            try {
+                const response = await api.get('/godowns');
+                if (response.success && Array.isArray(response.data)) {
+                    const sorted = response.data
+                        .map(g => ({
+                            id: g.id,
+                            name: g.name,
+                            district: g.district,
+                            commodity: 'Paddy',
+                            score: g.riskScore || 0,
+                            days: 45,
+                            status: (g.riskScore || 0) > 75 ? 'High Risk' : 'Normal'
+                        }))
+                        .sort((a, b) => b.score - a.score)
+                        .slice(0, 5);
+                    setData(sorted);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        };
+        fetchRisks();
+    }, []);
 
     return (
         <div className="overflow-x-auto">
@@ -85,10 +105,10 @@ const RiskTable = () => {
                             <td className="px-6 py-4 text-slate-600">{row.days}</td>
                             <td className="px-6 py-4">
                                 <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${row.status === 'High Risk'
-                                        ? 'bg-red-50 text-red-700 border-red-200'
-                                        : row.status === 'Medium' || row.status === 'Guide'
-                                            ? 'bg-amber-50 text-amber-700 border-amber-200'
-                                            : 'bg-green-50 text-green-700 border-green-200'
+                                    ? 'bg-red-50 text-red-700 border-red-200'
+                                    : row.status === 'Medium' || row.status === 'Guide'
+                                        ? 'bg-amber-50 text-amber-700 border-amber-200'
+                                        : 'bg-green-50 text-green-700 border-green-200'
                                     }`}>
                                     {row.status}
                                 </span>
@@ -161,21 +181,48 @@ const SpoilageChart = () => {
     );
 };
 
+import { useLanguage } from '../../context/LanguageContext';
+import { api } from '../../services/api';
+import { useState, useEffect } from 'react';
+import RiskMap from '../RiskMap';
+
 const Overview = () => {
+    const { t } = useLanguage();
+    const [metrics, setMetrics] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await api.get('/reports/dashboard');
+                if (response.success) {
+                    setMetrics(response.data);
+                }
+            } catch (error) {
+                console.error('Failed to fetch dashboard data', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+
+    if (loading) return <div className="p-8 text-center text-slate-500">Loading Dashboard...</div>;
+
     return (
         <div className="space-y-6">
             {/* KPI Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <KPICard
-                    title="Total Godowns"
-                    value="248"
-                    subtext="Across 38 districts"
+                    title={t('totalGodowns')}
+                    value={metrics?.totalGodowns || "0"}
+                    subtext={t('operationalDistrict')}
                     icon={MapPin}
                     color="bg-blue-600"
                 />
                 <KPICard
-                    title="At-Risk Godowns"
-                    value="12"
+                    title={t('atRiskGodowns')}
+                    value={metrics?.highRiskGodowns || "0"}
                     subtext="High Risk Status"
                     trend="down"
                     trendValue="15%"
@@ -183,8 +230,8 @@ const Overview = () => {
                     color="bg-red-500"
                 />
                 <KPICard
-                    title="Est. Spoilage Saved"
-                    value="₹4.2 Cr"
+                    title={t('estSpoilageSaved')}
+                    value={metrics?.spoilagePreventedValue || "₹0"}
                     subtext="Current Financial Year"
                     trend="up"
                     trendValue="8%"
@@ -192,7 +239,7 @@ const Overview = () => {
                     color="bg-emerald-600"
                 />
                 <KPICard
-                    title="Season Procurement"
+                    title={t('seasonProcurement')}
                     value="1,240 MT"
                     subtext="Kharif Marketing Season"
                     icon={TrendingUp}
@@ -204,25 +251,28 @@ const Overview = () => {
                 {/* Main Chart Section */}
                 <div className="lg:col-span-2 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <div className="flex justify-between items-center mb-6">
-                        <h2 className="text-lg font-bold text-slate-800">Spoilage vs Saved Trends</h2>
-                        <select className="text-sm bg-slate-50 border-slate-200 rounded-lg px-3 py-1.5 focus:ring-blue-500 focus:border-blue-500">
-                            <option>Last 6 Months</option>
-                            <option>Last Year</option>
-                        </select>
+                        <h2 className="text-lg font-bold text-slate-800">{t('spoilageTrends')}</h2>
+                        <div className="relative">
+                            <select className="text-sm bg-slate-50 border border-slate-200 text-slate-700 font-bold rounded-lg pl-3 pr-8 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer hover:bg-slate-100 transition-colors">
+                                <option>Last 6 Months</option>
+                                <option>Last Year</option>
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500">
+                                <TrendingDown size={14} />
+                            </div>
+                        </div>
                     </div>
                     <SpoilageChart />
                 </div>
 
-                {/* Risk Map Placeholder */}
-                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col">
-                    <h2 className="text-lg font-bold text-slate-800 mb-4">Risk Heatmap</h2>
-                    <div className="flex-1 bg-blue-50 rounded-lg flex items-center justify-center relative overflow-hidden group cursor-pointer">
-                        <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Tamil_Nadu_districts_map.svg/1200px-Tamil_Nadu_districts_map.svg.png')] bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" />
-                        <div className="z-10 text-center p-4">
-                            <MapPin className="mx-auto text-blue-600 mb-2" size={32} />
-                            <p className="text-sm font-medium text-slate-700">Interactive Map View</p>
-                            <p className="text-xs text-slate-500 mt-1">Click to expand district details</p>
-                        </div>
+                {/* Risk Map Section */}
+                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col h-[500px]">
+                    <h2 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <MapPin className="text-blue-600" size={20} />
+                        {t('riskHeatmap')}
+                    </h2>
+                    <div className="flex-1 bg-slate-50 rounded-lg overflow-hidden border border-slate-200 relative">
+                        <RiskMap />
                     </div>
                 </div>
             </div>
@@ -230,8 +280,8 @@ const Overview = () => {
             {/* Top Risk Table */}
             <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                 <div className="p-6 border-b border-slate-100 flex justify-between items-center">
-                    <h2 className="text-lg font-bold text-slate-800">Top High-Risk Godowns</h2>
-                    <button className="text-blue-600 text-sm font-medium hover:underline">View All Network</button>
+                    <h2 className="text-lg font-bold text-slate-800">{t('topRiskGodowns')}</h2>
+                    <button className="text-blue-600 text-sm font-medium hover:underline">{t('viewAll')}</button>
                 </div>
                 <RiskTable />
             </div>

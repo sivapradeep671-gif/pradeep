@@ -21,16 +21,29 @@ const RiskMap = () => {
     const [locations, setLocations] = useState([]);
 
     useEffect(() => {
-        fetch('/api/risk-map')
+        fetch('/api/v1/godowns')
             .then(res => res.json())
-            .then(data => setLocations(data))
+            .then(response => {
+                if (response.success) {
+                    const mappedData = response.data.map(g => ({
+                        id: g.id,
+                        lat: g.lat,
+                        lng: g.lng,
+                        name: g.name,
+                        risk: g.riskScore > 75 ? 'High' : g.riskScore > 40 ? 'Medium' : 'Low',
+                        stock: Math.floor(g.capacity * 0.8), // Simulated visual stock
+                        humidity: g.riskScore > 75 ? 18 : 12 // Simulated correlation
+                    }));
+                    setLocations(mappedData);
+                }
+            })
             .catch(err => console.error(err));
     }, []);
 
     const getColor = (risk) => {
-        if (risk === 'High') return 'red';
-        if (risk === 'Medium') return 'orange';
-        return 'green';
+        if (risk === 'High') return '#ef4444';
+        if (risk === 'Medium') return '#f97316';
+        return '#10b981';
     };
 
     return (

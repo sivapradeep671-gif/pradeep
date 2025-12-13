@@ -9,18 +9,42 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import { api } from '../../services/api';
+
 const GodownNetwork = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [godowns, setGodowns] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // Mock Data
-    const godowns = [
-        { id: 'TNJ001', name: 'Thanjavur Main', district: 'Thanjavur', capacity: 5000, stock: 4200, util: 84, risk: 85, status: 'Critical', lastInsp: '2023-12-10' },
-        { id: 'TVR004', name: 'Mannargudi G1', district: 'Tiruvarur', capacity: 3000, stock: 1200, util: 40, risk: 78, status: 'High Risk', lastInsp: '2023-12-08' },
-        { id: 'NGP002', name: 'Nagapattinam Central', district: 'Nagapattinam', capacity: 4500, stock: 4100, util: 91, risk: 72, status: 'Watch', lastInsp: '2023-12-11' },
-        { id: 'TRY008', name: 'Trichy Buffer', district: 'Trichy', capacity: 10000, stock: 6500, util: 65, risk: 45, status: 'Normal', lastInsp: '2023-12-05' },
-        { id: 'MDU012', name: 'Madurai North', district: 'Madurai', capacity: 6000, stock: 3200, util: 53, risk: 30, status: 'Normal', lastInsp: '2023-12-01' },
-        { id: 'CBE003', name: 'Coimbatore West', district: 'Coimbatore', capacity: 4000, stock: 3900, util: 97, risk: 60, status: 'Watch', lastInsp: '2023-12-12' },
-    ];
+    React.useEffect(() => {
+        const fetchGodowns = async () => {
+            try {
+                const response = await api.get('/godowns');
+                if (response.success && Array.isArray(response.data)) {
+                    // Normalize backend data to UI expectations
+                    const transformed = response.data.map(g => ({
+                        id: g.id,
+                        name: g.name,
+                        district: g.district,
+                        capacity: g.capacity || 0,
+                        stock: g.capacity ? (g.capacity * 0.8) : 0, // Mock stock if missing
+                        util: g.capacity ? Math.round(((g.capacity * 0.8) / g.capacity) * 100) : 0,
+                        risk: g.riskScore || 0,
+                        status: (g.riskScore || 0) > 75 ? 'Critical' : 'Normal',
+                        lastInsp: '2023-12-10'
+                    }));
+                    setGodowns(transformed);
+                }
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchGodowns();
+    }, []);
+
+    if (loading) return <div className="p-8 text-center">Loading Network...</div>;
 
     return (
         <div className="space-y-6">
@@ -115,10 +139,10 @@ const GodownNetwork = () => {
                                     </td>
                                     <td className="px-6 py-4">
                                         <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${item.status === 'Critical' || item.status === 'High Risk'
-                                                ? 'bg-red-50 text-red-700 border-red-200'
-                                                : item.status === 'Watch'
-                                                    ? 'bg-amber-50 text-amber-700 border-amber-200'
-                                                    : 'bg-green-50 text-green-700 border-green-200'
+                                            ? 'bg-red-50 text-red-700 border-red-200'
+                                            : item.status === 'Watch'
+                                                ? 'bg-amber-50 text-amber-700 border-amber-200'
+                                                : 'bg-green-50 text-green-700 border-green-200'
                                             }`}>
                                             {item.status}
                                         </span>

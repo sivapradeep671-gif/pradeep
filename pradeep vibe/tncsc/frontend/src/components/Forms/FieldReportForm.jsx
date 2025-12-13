@@ -89,13 +89,30 @@ const FieldReportForm = ({ onClose }) => {
                 </div>
                 <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1">{t('godownId')}</label>
-                    <input
-                        type="text"
+                    <select
                         value={formData.metadata.godownId}
                         onChange={(e) => updateField('metadata', 'godownId', e.target.value)}
                         className="w-full border rounded p-2 text-sm"
-                        placeholder="G-Code"
-                    />
+                    >
+                        <option value="">Select Godown...</option>
+                        <option value="TNJ001">TNJ001 - Thanjavur Main</option>
+                        <option value="TNJ002">TNJ002 - Kumbakonam Central</option>
+                        <option value="MDU005">MDU005 - Madurai Kappalur</option>
+                        <option value="CHE012">CHE012 - Ambattur FCI</option>
+                        <option value="TVR008">TVR008 - Mannargudi DPC</option>
+                        <option value="CBE003">CBE003 - Coimbatore West</option>
+                        <option value="VPM004">VPM004 - Villupuram Junction</option>
+                    </select>
+                </div>
+                <div>
+                    <label className="block text-xs font-bold text-gray-500 mb-1">Upload Photo</label>
+                    <div className="flex items-center gap-2">
+                        <label className="cursor-pointer bg-blue-50 text-blue-600 px-3 py-2 rounded text-xs font-bold border border-blue-200 hover:bg-blue-100 flex items-center gap-1">
+                            <Camera size={14} /> Capture / Upload
+                            <input type="file" className="hidden" accept="image/*" onChange={(e) => updateField('metadata', 'photo', e.target.files[0])} />
+                        </label>
+                        {formData.metadata.photo && <span className="text-xs text-green-600 font-bold">✓ Attached</span>}
+                    </div>
                 </div>
                 <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1">{t('inspectionType')}</label>

@@ -11,6 +11,7 @@ import InventoryAging from './components/Dashboard/InventoryAging';
 import AlertsTasks from './components/Dashboard/AlertsTasks';
 import ImpactAnalytics from './components/Dashboard/ImpactAnalytics';
 import { LanguageProvider } from './context/LanguageContext';
+import HQDashboard from './components/HQDashboard';
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/godown/:id" element={<GodownDetails />} />
 
                     {/* New RiskGuard Dashboard Routes */}
+                    <Route path="/hq" element={<HQDashboard />} />
                     <Route path="/dashboard" element={<DashboardLayout />}>
                         <Route index element={<Navigate to="overview" replace />} />
                         <Route path="overview" element={<Overview />} />

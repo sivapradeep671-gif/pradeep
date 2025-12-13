@@ -17,25 +17,59 @@ const FieldDashboard = () => {
     const { t, language, toggleLanguage } = useLanguage();
     const navigate = useNavigate();
     const handleLogout = () => navigate('/');
-    const [tasks, setTasks] = useState([]);
-    const [filter, setFilter] = useState('All'); // All, Critical, Pending, Completed
-    const [selectedTask, setSelectedTask] = useState(null); // For Drawer
+    // Mock Tasks for "Hero" Demo
+    const [tasks, setTasks] = useState([
+        {
+            id: 1,
+            title: 'Routine Inspection - TNJ001',
+            location: 'Thanjavur Main Godown',
+            priority: 'Normal',
+            dueDate: '2025-12-15',
+            status: 'Pending',
+            riskReason: '',
+            instructions: 'Verify stock position of Paddy (Common) and check for pest activity.',
+            metrics: { stock: '12,400 MT', humidity: '13%', age: '24 Days' }
+        },
+        {
+            id: 2,
+            title: 'Urgent: Moisture Alert - TVR008',
+            location: 'Mannargudi DPC',
+            priority: 'Critical',
+            dueDate: '2025-12-14',
+            status: 'Pending',
+            riskReason: 'IoT Sensor reported 18% Moisture',
+            instructions: 'Inspect Stack 4 immediately. Check for roof leaks or improved ventilation needs.',
+            metrics: { stock: '5,000 MT', humidity: '18% ⚠️', age: '12 Days' }
+        },
+        {
+            id: 3,
+            title: 'Stock Audit - MDU005',
+            location: 'Madurai Kappalur',
+            priority: 'High',
+            dueDate: '2025-12-16',
+            status: 'Pending',
+            riskReason: 'Discrepancy in SAP vs Physical',
+            instructions: 'Full physical weighment required for Wheat stock.',
+            metrics: { stock: '12,000 MT', humidity: '11%', age: '45 Days' }
+        },
+        {
+            id: 4,
+            title: 'Safety Compliance Check',
+            location: 'Coimbatore West',
+            priority: 'Normal',
+            dueDate: '2025-12-13',
+            status: 'Completed',
+            completedAt: '2025-12-13T10:30:00Z',
+            remarks: 'All safety norms followed. Fire extinguishers refilled.',
+            riskReason: '',
+            metrics: { stock: '10,000 MT', humidity: '12%', age: '60 Days' }
+        }
+    ]);
 
-    // Modal States
-    const [showUpload, setShowUpload] = useState(false);
-    // New Report Modals
-    const [showFieldReport, setShowFieldReport] = useState(false);
-    const [showWeekendReport, setShowWeekendReport] = useState(false);
-
-    const [showComplete, setShowComplete] = useState(false);
-    const [uploadedFile, setUploadedFile] = useState(null);
-    const [remarks, setRemarks] = useState('');
-
-    useEffect(() => {
-        fetch('/api/field-tasks')
-            .then(res => res.json())
-            .then(data => setTasks(data));
-    }, []);
+    // Effect removed for Demo stability
+    // useEffect(() => {
+    //     fetch('/api/field-tasks')...
+    // }, []);
 
     const filteredTasks = tasks.filter(t => {
         if (filter === 'All') return true;
@@ -148,8 +182,11 @@ const FieldDashboard = () => {
                         </div>
                         <h3 className="font-bold text-gray-800">{task.title}</h3>
                         <div className="flex items-center gap-2 mt-2 text-xs text-gray-500">
+                            import {formatDate} from '../utils/dateUtils';
+
+                            // ... inside render ...
                             <Icons.Clock />
-                            <span>Due: {new Date(task.dueDate).toLocaleDateString()}</span>
+                            <span>Due: {formatDate(task.dueDate)}</span>
                         </div>
                     </div>
                 ))}

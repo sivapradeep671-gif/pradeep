@@ -62,8 +62,78 @@ export const translations = {
         resources: 'Resources & Compliance',
         sop: 'Standard Operating Procedures (SOP)',
         circulars: 'Latest Circulars',
+
+        // Landing Page - Hero
+        heroTitle: 'TNCSC RiskGuard',
+        heroSubtitle: 'AI-Powered Risk Management & Decision Support System for Food Security',
+        heroProblem: 'Protecting 20M+ beneficiaries by digitizing Grain Storage & Movement',
+        tryDemo: 'Try Live Demo',
+        viewProblem: 'View Problem Statement',
+
+        // Landing Page - Problem
+        problemTitle: 'The Challenge',
+        problemDesc: 'Manual tracking of 250+ Godowns leads to grain spoilage, theft, and operational inefficiencies.',
+        problem1: 'Grain Spoilage Risk',
+        problem1Desc: 'Moisture & pests cause significant yearly loss.',
+        problem2: 'Operational Blindspots',
+        problem2Desc: 'Lack of real-time visibility into stock and movement.',
+        problem3: 'Slow Response',
+        problem3Desc: 'Delays in reporting incidents from field to HQ.',
+
+        // Landing Page - Solution
+        solutionTitle: 'The Solution: RiskGuard',
+        solutionDesc: 'A unified command center integrating IoT, AI, and Blockchain.',
+        feature1: 'Real-Time Risk Map',
+        feature1Desc: 'Live monitoring of flood, fire, and pest risks.',
+        feature2: 'Immutable Ledger',
+        feature2Desc: 'Blockchain-backed audit trail for all stock movement.',
+        feature3: 'Field App',
+        feature3Desc: 'Offline-first mobile tool for inspection officers.',
+        feature4: 'AI Analytics',
+        feature4Desc: 'Predictive models for spoilage and demand.',
+
+        // Impact
+        impactTitle: 'Projected Impact',
+        metric1: 'Godowns Monitored',
+        metric2: 'Incidents Prevented',
+        metric3: 'Value Protected',
+
+        // Footer/About
+        metric3: 'Value Protected',
+
+        // Roadmap
+        roadmapTitle: 'Development Roadmap',
+        phase1: 'Phase 1: Pilot (Current)',
+        phase1Desc: 'Live Risk Mapping, Digital Inspections, Basic Analytics.',
+        phase2: 'Phase 2: Integration (Q1 2026)',
+        phase2Desc: 'API Integration with TNCSC ERP, ePDS, and e-DPC.',
+        phase3: 'Phase 3: Intelligence (Q3 2026)',
+        phase3Desc: 'Predictive AI Models for Spoilage & Demand Forecasting.',
+
+        // Footer/About
+        builtBy: 'Built by Team Antigravity',
+        forSIH: 'For SIH 2024 / TNCSC',
+        contact: 'Contact Us',
         forms: 'Forms & Templates',
         escalation: 'Escalation Matrix',
+
+        // Navigation
+        navOverview: 'Overview',
+        navNetwork: 'Godown Network',
+        navInventory: 'Inventory & Aging',
+        navAlerts: 'Alerts & Tasks',
+        navAnalytics: 'Impact Analytics',
+        navSettings: 'Settings',
+
+        // Overview KPIs
+        totalGodowns: 'Total Godowns',
+        atRiskGodowns: 'At-Risk Godowns',
+        estSpoilageSaved: 'Est. Spoilage Saved',
+        seasonProcurement: 'Season Procurement',
+        riskHeatmap: 'Risk Heatmap',
+        spoilageTrends: 'Spoilage vs Saved Trends',
+        topRiskGodowns: 'Top High-Risk Godowns',
+        viewAll: 'View All Network',
 
         // Inspection Module
         inspectionReport: 'Inspection Report',
@@ -170,8 +240,75 @@ export const translations = {
         resources: 'வளங்கள் & இணக்கம்',
         sop: 'நிலையான செயல்பாட்டு நடைமுறைகள் (SOP)',
         circulars: 'சமீபத்திய சுற்றறிக்கைகள்',
+
+        // Landing Page - Hero
+        heroTitle: 'TNCSC சென்ட்ரி',
+        heroSubtitle: 'உணவு பாதுகாப்புக்கான நவீன கண்காணிப்பு அமைப்பு',
+        heroProblem: 'தானிய சேமிப்பு மற்றும் இயக்கத்தை டிஜிட்டல் மயமாக்குதல்',
+        tryDemo: 'செயல்முறை விளக்கம்',
+        viewProblem: 'பிரச்சனை அறிக்கை',
+
+        // Landing Page - Problem
+        problemTitle: 'சவால்கள்',
+        problemDesc: 'கையேடு கண்காணிப்பு முறையால் ஏற்படும் விரயம் மற்றும் தாமதங்கள்.',
+        problem1: 'தானிய சேத ஆபத்து',
+        problem1Desc: 'ஈரப்பதம் மற்றும் பூச்சிகளால் ஏற்படும் இழப்பு.',
+        problem2: 'கண்காணிப்பு குறைபாடு',
+        problem2Desc: 'இருப்பு மற்றும் இயக்கத்தின் நேரடி பார்வை இன்மை.',
+        problem3: 'தாமதமான நடவடிக்கை',
+        problem3Desc: 'களத்திலிருந்து தலைமையகத்திற்கு தகவல் தாமதம்.',
+
+        // Landing Page - Solution
+        solutionTitle: 'தீர்வு: ரிஸ்க்கார்ட்',
+        solutionDesc: 'IoT, AI மற்றும் Blockchain ஒருங்கிணைந்த கட்டளை மையம்.',
+        feature1: 'நிகழ்நேர ஆபத்து வரைபடம்',
+        feature1Desc: 'வெள்ளம், தீ மற்றும் பூச்சி அபாயங்களை கண்காணித்தல்.',
+        feature2: 'மாறாத கணக்கு',
+        feature2Desc: 'அனைத்து இருப்பு அசைவுகளுக்கும் Blockchain ஆதாரம்.',
+        feature3: 'கள செயலி',
+        feature3Desc: 'ஆய்வு அதிகாரிகளுக்கான மொபைல் கருவி.',
+        feature4: 'AI பகுப்பாய்வு',
+        feature4Desc: 'தேவை மற்றும் சேத முன்னறிவிப்பு.',
+
+        // Impact
+        impactTitle: 'தாக்கம்',
+        metric1: 'கண்காணிக்கப்பட்ட கிடங்குகள்',
+        metric2: 'தடுக்கப்பட்ட சம்பவங்கள்',
+        metric3: 'பாதுகாக்கப்பட்ட மதிப்பு',
+
+        // Roadmap
+        roadmapTitle: 'வளர்ச்சி வரைபடம்',
+        phase1: 'கட்டம் 1: முன்னோடி திட்டம் (தற்போதைய)',
+        phase1Desc: 'ஆபத்து வரைபடம், டிஜிட்டல் ஆய்வுகள், அடிப்படை பகுப்பாய்வு.',
+        phase2: 'கட்டம் 2: ஒருங்கிணைப்பு (Q1 2026)',
+        phase2Desc: 'TNCSC ERP, ePDS மற்றும் e-DPC உடன் API இணைப்பு.',
+        phase3: 'கட்டம் 3: நுண்ணறிவு (Q3 2026)',
+        phase3Desc: 'முன்னறிவிப்பு AI மாதிரிகள் மற்றும் தேவை கணிப்பு.',
+
+        // Footer/About
+        builtBy: 'உருவாக்கியவர்: டீம் ஆன்டிகிராவிட்டி',
+        forSIH: 'SIH 2024 / TNCSC க்காக',
+        contact: 'தொடர்புக்கு',
         forms: 'படிவங்கள் & வார்ப்புருக்கள்',
         escalation: 'பணி தீவிரப்படுத்தல் அணி',
+
+        // Navigation
+        navOverview: 'கண்ணோட்டம்',
+        navNetwork: 'கிடங்கு நெட்வொர்க்',
+        navInventory: 'சரக்கு & வயது',
+        navAlerts: 'எச்சரிக்கைகள்',
+        navAnalytics: 'தாக்கங்களின் பகுப்பாய்வு',
+        navSettings: 'அமைப்புகள்',
+
+        // Overview KPIs
+        totalGodowns: 'மொத்த கிடங்குகள்',
+        atRiskGodowns: 'ஆபத்தில் உள்ள கிடங்குகள்',
+        estSpoilageSaved: 'தடுக்கப்பட்ட சேத மதிப்பு',
+        seasonProcurement: 'பருவ கொள்முதல்',
+        riskHeatmap: 'ஆபத்து வரைபடம்',
+        spoilageTrends: 'சேதம் vs சேமிப்பு போக்கு',
+        topRiskGodowns: 'அதிக ஆபத்துள்ள கிடங்குகள்',
+        viewAll: 'அனைத்தையும் காண்க',
 
         // Inspection Module
         inspectionReport: 'ஆய்வு அறிக்கை',
