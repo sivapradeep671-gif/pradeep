@@ -12,29 +12,29 @@ const AdminPanel = () => {
         <div className="space-y-6 animate-slide-in">
             <div className="bg-white p-1 rounded-lg border border-slate-200 inline-flex shadow-sm mb-4">
                 <button
-                    onClick={() => setActiveTab('USERS')}
-                    className={`px-4 py-2 rounded-md text-sm font-bold transition-all ${activeTab === 'USERS' ? 'bg-slate-800 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}
+                    onClick={() => setSubTab('USERS')}
+                    className={`px-4 py-2 rounded-md text-sm font-bold transition-all ${subTab === 'USERS' ? 'bg-slate-800 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}
                 >
                     {t('users') || 'Users & Roles'}
                 </button>
                 <button
-                    onClick={() => setActiveTab('CONFIG')}
-                    className={`px-4 py-2 rounded-md text-sm font-bold transition-all ${activeTab === 'CONFIG' ? 'bg-slate-800 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}
+                    onClick={() => setSubTab('CONFIG')}
+                    className={`px-4 py-2 rounded-md text-sm font-bold transition-all ${subTab === 'CONFIG' ? 'bg-slate-800 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}
                 >
                     {t('configuration') || 'System Configuration'}
                 </button>
                 <button
-                    onClick={() => setActiveTab('RESOURCES')}
-                    className={`px-4 py-2 rounded-md text-sm font-bold transition-all ${activeTab === 'RESOURCES' ? 'bg-slate-800 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}
+                    onClick={() => setSubTab('RESOURCES')}
+                    className={`px-4 py-2 rounded-md text-sm font-bold transition-all ${subTab === 'RESOURCES' ? 'bg-slate-800 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}
                 >
                     {t('resources') || 'Resources & Compliance'}
                 </button>
             </div>
 
             <div className="space-y-6">
-                {activeTab === 'USERS' && <UserManagement />}
-                {activeTab === 'CONFIG' && <RiskConfig />}
-                {activeTab === 'RESOURCES' && <ComplianceWidget />}
+                {subTab === 'USERS' && <UserManagement />}
+                {subTab === 'CONFIG' && <RiskConfig />}
+                {subTab === 'RESOURCES' && <ComplianceWidget />}
             </div>
             {/* Audit Log Placeholder */}
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 opacity-60">
