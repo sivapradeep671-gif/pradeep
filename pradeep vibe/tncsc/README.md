@@ -72,3 +72,14 @@ RiskGuard is a comprehensive decision-support system designed for the Tamil Nadu
 
 ## 📜 License
 This project is developed for the TNCSC Innovation Challenge.
+
+## 🛠️ Troubleshooting & Dev Notes
+
+### Blank Screen on GitHub Pages
+- **Cause**: Client-side routing behavior conflicts with static hosting.
+- **Fix**: The project uses `HashRouter` (/#/url) in `App.jsx` to ensure compatibility with GitHub Pages.
+- **Verification**: If the page loads but shows only title, a hard refresh (Ctrl+Shift+R) clears cached older builds.
+
+### Build Failures
+- **Circular Dependency**: We resolved a critical `tncsc-system` circular reference in `package.json` that was causing CI/CD crashes.
+- **Pathing**: The `vite.config.js` `base` is correctly set to `/pradeep/` for correct asset loading.
