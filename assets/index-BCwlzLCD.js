@@ -9079,6 +9079,16 @@ const CloudRain = createLucideIcon("CloudRain", [
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
+const CreditCard = createLucideIcon("CreditCard", [
+  ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
+  ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const Database = createLucideIcon("Database", [
   ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
   ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
@@ -9124,6 +9134,23 @@ const Globe = createLucideIcon("Globe", [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
   ["path", { d: "M2 12h20", key: "9i4pu4" }]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Layers = createLucideIcon("Layers", [
+  [
+    "path",
+    {
+      d: "m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z",
+      key: "8b97xw"
+    }
+  ],
+  ["path", { d: "m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65", key: "dd6zsq" }],
+  ["path", { d: "m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65", key: "ep9fru" }]
 ]);
 /**
  * @license lucide-react v0.294.0 - ISC
@@ -9309,6 +9336,18 @@ const Send = createLucideIcon("Send", [
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
+const Server = createLucideIcon("Server", [
+  ["rect", { width: "20", height: "8", x: "2", y: "2", rx: "2", ry: "2", key: "ngkwjq" }],
+  ["rect", { width: "20", height: "8", x: "2", y: "14", rx: "2", ry: "2", key: "iecqi9" }],
+  ["line", { x1: "6", x2: "6.01", y1: "6", y2: "6", key: "16zg32" }],
+  ["line", { x1: "6", x2: "6.01", y1: "18", y2: "18", key: "nzw8ys" }]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const Settings = createLucideIcon("Settings", [
   [
     "path",
@@ -9357,6 +9396,30 @@ const Smartphone = createLucideIcon("Smartphone", [
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
+const Sprout = createLucideIcon("Sprout", [
+  ["path", { d: "M7 20h10", key: "e6iznv" }],
+  ["path", { d: "M10 20c5.5-2.5.8-6.4 3-10", key: "161w41" }],
+  [
+    "path",
+    {
+      d: "M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z",
+      key: "9gtqwd"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z",
+      key: "bkxnd2"
+    }
+  ]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const TrendingDown = createLucideIcon("TrendingDown", [
   ["polyline", { points: "22 17 13.5 8.5 8.5 13.5 2 7", key: "1r2t7k" }],
   ["polyline", { points: "16 17 22 17 22 11", key: "11uiuu" }]
@@ -9393,6 +9456,18 @@ const Truck = createLucideIcon("Truck", [
 const User = createLucideIcon("User", [
   ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
   ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Users = createLucideIcon("Users", [
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
+  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
+  ["path", { d: "M16 3.13a4 4 0 0 1 0 7.75", key: "1da9ce" }]
 ]);
 /**
  * @license lucide-react v0.294.0 - ISC
@@ -9496,6 +9571,95 @@ const LandingPage = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 leading-relaxed", children: t2(item.desc) })
       ] }, idx)) })
     ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-24 bg-[#0B1120] relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container mx-auto px-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-16 text-center", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-emerald-500 font-bold tracking-widest uppercase text-xs mb-2 block", children: "Real-time Visibility" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-3xl md:text-4xl font-bold text-white mb-4", children: [
+          "Tamil Nadu ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GradientText, { children: "Risk Map & Stock Flow" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 max-w-2xl mx-auto", children: "Live visualization of commodity movements across all 38 districts." })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-[#1e293b]/50 border border-slate-700/50 rounded-3xl p-8 md:p-12 relative overflow-hidden", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 opacity-20 pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "w-full h-full", viewBox: "0 0 800 600", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M400 100 Q 450 150 420 200 T 500 300 T 450 450 T 350 500 T 250 400 T 300 250 T 400 100", stroke: "#10b981", strokeWidth: "2", strokeDasharray: "10 10", className: "animate-pulse" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "400", cy: "100", r: "4", className: "fill-emerald-500" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "420", cy: "200", r: "4", className: "fill-emerald-500" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "500", cy: "300", r: "4", className: "fill-emerald-500" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "350", cy: "500", r: "4", className: "fill-emerald-500" })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-2 min-h-[400px] relative bg-[#0f172a] rounded-2xl border border-slate-700 p-6 shadow-2xl overflow-hidden group", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-4 left-4 z-20 bg-slate-800/80 backdrop-blur px-4 py-2 rounded-lg border border-white/10", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1", children: "Active Commodity Routes" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 text-[10px] text-slate-300", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2 h-2 rounded-full bg-white" }),
+                  " Rice (Delta)"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2 h-2 rounded-full bg-amber-400" }),
+                  " Wheat"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2 h-2 rounded-full bg-yellow-600" }),
+                  " Palm Oil"
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 p-8 grid grid-cols-4 md:grid-cols-6 gap-4 content-center opacity-80", children: ["சென்னை", "திருவள்ளூர்", "காஞ்சிபுரம்", "செங்கல்பட்டு", "வேலூர்", "ராணிப்பேட்டை", "திருப்பத்தூர்", "திருவண்ணாமலை", "விழுப்புரம்", "கள்ளக்குறிச்சி", "தர்மபுரி", "கிருஷ்ணகிரி", "சேலம்", "ஈரோடு", "திருப்பூர்", "கோவை", "நீலகிரி", "நாமக்கல்", "கரூர்", "திருச்சி", "பெரம்பலூர்", "அரியலூர்", "கடலூர்", "நாகை", "மயிலாடுதுறை", "திருவாரூர்", "தஞ்சை", "புதுக்கோட்டை", "திண்டுக்கல்", "தேனி", "மதுரை", "சிவகங்கை", "விருதுநகர்", "ராமநாதபுரம்", "தூத்துக்குடி", "தென்காசி", "நெல்லை", "கன்னியாகுமரி"].map((dist, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] md:text-xs text-slate-500 hover:text-emerald-400 transition-colors cursor-default select-none flex items-center justify-center p-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10", children: dist }, i)) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 pointer-events-none", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-[60%] left-[60%] w-1 h-1 bg-white rounded-full shadow-[0_0_10px_white] animate-[flow_3s_infinite_linear]", style: { "--tx": "-100px", "--ty": "-200px" } }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-[60%] left-[60%] w-[100px] h-[200px] border-t-2 border-l-2 border-white/20 rounded-tl-full transform -rotate-12 translate-x-[-100px] translate-y-[-200px]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-[70%] left-[40%] w-1 h-1 bg-amber-400 rounded-full shadow-[0_0_10px_orange] animate-[flow_4s_infinite_linear_1s]", style: { "--tx": "50px", "--ty": "100px" } })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 bg-slate-800/50 rounded-2xl border border-slate-700", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between mb-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-slate-400 uppercase tracking-wider mb-1", children: "Total Stock Movement" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold text-white", children: "42,500 MT" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "text-emerald-500", size: 20 })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full bg-slate-700 h-1.5 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[75%] h-full bg-emerald-500 rounded-full" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 text-xs text-slate-400 flex justify-between", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Capacity Utilization" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-emerald-400", children: "75%" })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 bg-slate-800/50 rounded-2xl border border-slate-700", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between mb-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-slate-400 uppercase tracking-wider mb-1", children: "Active Alerts" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold text-white", children: "12" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(AlertTriangle, { className: "text-amber-500", size: 20 })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs text-slate-300", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-red-500" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Weather Risk: coastal (Nagai)" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs text-slate-300", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-amber-500" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Delay: Trichy to Madurai" })
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-2xl shadow-lg text-white", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 mb-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Truck, { size: 20 }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold text-sm", children: "Live Fleet" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-3xl font-bold mb-1", children: "1,240" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-emerald-100 text-xs opacity-80", children: "Trucks on road right now" })
+            ] })
+          ] })
+        ] })
+      ] })
+    ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 relative overflow-hidden", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 right-0 w-1/3 h-full bg-emerald-500/5 blur-3xl rounded-full" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container mx-auto px-6 relative z-10", children: [
@@ -9504,7 +9668,7 @@ const LandingPage = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 max-w-2xl", children: t2("solutionDesc") })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-4 gap-6", children: [
-          { title: "feature1", desc: "feature1Desc", icon: Map$1, bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
+          { title: "feature1", desc: "feature1Desc", icon: Map, bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
           { title: "feature2", desc: "feature2Desc", icon: Lock, bg: "bg-blue-500/10", border: "border-blue-500/20" },
           { title: "feature3", desc: "feature3Desc", icon: Smartphone, bg: "bg-purple-500/10", border: "border-purple-500/20" },
           { title: "feature4", desc: "feature4Desc", icon: Database, bg: "bg-orange-500/10", border: "border-orange-500/20" }
@@ -9533,6 +9697,48 @@ const LandingPage = () => {
         ] })
       ] })
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-slate-900 border-y border-white/5", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container mx-auto px-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center mb-16", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20 mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { size: 14 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Interoperable Architecture" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-3xl font-bold text-white mb-4", children: [
+          "Built for ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GradientText, { children: "Tamil Nadu Stack" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 max-w-2xl mx-auto", children: "Seamlessly integrated with existing state infrastructure for unified governance." })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-3 gap-8", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 rounded-2xl bg-[#0f172a] border border-slate-700 hover:border-emerald-500/50 transition-all group", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CreditCard, { size: 24 }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-white mb-3", children: "ePDS Integration" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 text-sm leading-relaxed mb-4", children: "Authenticates ration-card entitlements and verifies shop-level disbursement data in real-time." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-300 border border-slate-700", children: "Verify Card" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-300 border border-slate-700", children: "Stock Sync" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 rounded-2xl bg-[#0f172a] border border-slate-700 hover:border-emerald-500/50 transition-all group", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center text-green-400 mb-6 group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sprout, { size: 24 }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-white mb-3", children: "e-DPC Connection" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 text-sm leading-relaxed mb-4", children: "Syncs farmer procurement data directly from Direct Purchase Centers to godown inventory logs." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-300 border border-slate-700", children: "Farmer Pay" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-300 border border-slate-700", children: "Paddy Inflow" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 rounded-2xl bg-[#0f172a] border border-slate-700 hover:border-emerald-500/50 transition-all group", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Server, { size: 24 }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-white mb-3", children: "TNeGA Data Exchange" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 text-sm leading-relaxed mb-4", children: "Compliant with State API policies for secure, encrypted cross-departmental data sharing." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-300 border border-slate-700", children: "Secure API" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-300 border border-slate-700", children: "Zero Copy" })
+          ] })
+        ] })
+      ] })
+    ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-slate-800/50 border-y border-white/5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "container mx-auto px-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row items-center gap-12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 space-y-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20", children: [
@@ -9546,7 +9752,7 @@ const LandingPage = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 text-lg leading-relaxed", children: "A dedicated mobile app for TNCSC truck drivers, transforming every vehicle into a smart, trackable asset." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 bg-emerald-500/10 rounded-lg text-emerald-400 h-fit", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Map$1, { size: 24 }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 bg-emerald-500/10 rounded-lg text-emerald-400 h-fit", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Map, { size: 24 }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-bold text-slate-200", children: "Live GPS Tracking" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-slate-400 mt-1", children: "Real-time location sharing with HQ. Eliminates unapproved stops and route deviations." })
@@ -9582,7 +9788,7 @@ const LandingPage = () => {
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-slate-400 mb-1", children: "ETA" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-emerald-400", children: "2 hrs 15 mins" })
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Map$1, { className: "text-slate-600" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Map, { className: "text-slate-600" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-red-500/10 border border-red-500/20 mt-4", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-red-400 font-bold text-sm mb-1", children: [
@@ -9592,6 +9798,59 @@ const LandingPage = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-red-300/70", children: "Geofence lock enabled. Do not deviate." })
             ] })
           ] })
+        ] })
+      ] })
+    ] }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-emerald-950/30 border-t border-emerald-900/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "container mx-auto px-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col lg:flex-row gap-16 items-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:w-1/2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-3xl md:text-5xl font-bold text-white leading-tight mb-8 font-serif", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-xl text-emerald-400 font-sans mb-2 font-bold tracking-wider uppercase", children: "Public Welfare" }),
+          "ஏன் TNCSC RiskGuard? ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "bg-clip-text text-transparent bg-gradient-to-r from-emerald-200 to-white text-2xl md:text-4xl mt-2 block", children: [
+            "நம்ம விவசாயிகளுக்கும் ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            "ரேஷன் கார்டு வைத்தவர்களுக்கும்"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { size: 20 }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-slate-300 leading-relaxed text-lg", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold text-white block mb-1", children: "தரமான உணவுப் பாதுகாப்பு" }),
+              "களஞ்சியத்தில் இருக்கும் அரிசி, கோதுமை, பருப்பு வெப்பம், ஈரப்பதம், பூச்சி தாக்கம் எல்லாமே சென்சார் மூலம் 24x7 கண்காணிப்பு – கெடுதல் குறைந்து, தரம் காக்கப்படும்."
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Map$1, { size: 20 }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-slate-300 leading-relaxed text-lg", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold text-white block mb-1", children: "பேரிடர் முன்னெச்சரிக்கை" }),
+              "மழை, வெள்ளம், தீ விபத்து போன்ற அபாயங்கள் முன்கூட்டியே வரைபடத்தில் புலப்படும்; அதனால் பக்கத்து மாவட்டத்துக்கு ஸ்டாக் விரைவில் மாற்ற முடியும்."
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Truck, { size: 20 }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-slate-300 leading-relaxed text-lg", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold text-white block mb-1", children: "வெளிப்படையான போக்குவரத்து" }),
+              "டிரக் ஒவ்வொன்றும் GPS மூலம் லைவ் டிராக்கிங்; வழி மாறினாலோ, இடைவேளையில்லாமல் நிறுத்தினாலோ உடனடி அலர்ட் – திருட்டு, சோர் ஒழுங்கு குறையும்."
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Users, { size: 20 }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-slate-300 leading-relaxed text-lg", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold text-white block mb-1", children: "துரித சேவை" }),
+              "இருப்பு நிலை, குணநிலை எல்லாம் டிஜிட்டல் ரெக்கார்டாக சேமிப்பு; ஆய்வு அதிகாரிகள் எங்கு சென்றாலும் மொபைல் ஆப்பில் உடனடி அப்டேட்."
+            ] })
+          ] })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:w-1/2 relative", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-emerald-500/20 blur-3xl rounded-full" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative bg-[#0f172a] p-8 rounded-3xl border border-slate-700 shadow-2xl text-center space-y-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-block p-4 rounded-full bg-emerald-100/10 mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: logo, alt: "TNCSC", className: "w-24 h-24 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-bold text-white", children: "இதை எல்லாம் சேர்த்து பார்த்தா..." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-300 text-lg leading-relaxed italic", children: '"நம்ம ரேஷன் கடையில் வரும் அரிசி தரம் மேம்பட்டு, வீணாகும் தானியம் குறைக்கு; அதுதான் RiskGuard நோக்கம்."' }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-emerald-500/25", children: "மேலும் அறிய (Learn More)" })
         ] })
       ] })
     ] }) }) }),
@@ -9634,8 +9893,10 @@ const LandingPage = () => {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-500 text-sm mb-8", children: t2("heroSubtitle") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-slate-600 space-y-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t2("builtBy") }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t2("forSIH") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm font-medium text-slate-400", children: [
+          "Developed by ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-bold text-base hover:scale-105 inline-block transition-transform cursor-default", children: "Sivapradeep Maharajan" })
+        ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "pt-4 border-t border-slate-800 mt-4 text-slate-500 italic max-w-2xl mx-auto", children: '"Concept solution for TNCSC, aligned with Govt. of Tamil Nadu policies on digital PDS and GPS-based tracking. Not an official government platform."' })
       ] })
     ] }) })
@@ -14317,7 +14578,7 @@ var leafletSrc = { exports: {} };
         delete this._controlContainer;
       }
     });
-    var Layers = Control.extend({
+    var Layers2 = Control.extend({
       // @section
       // @aka Control.Layers options
       options: {
@@ -14605,7 +14866,7 @@ var leafletSrc = { exports: {} };
       }
     });
     var layers = function(baseLayers, overlays, options) {
-      return new Layers(baseLayers, overlays, options);
+      return new Layers2(baseLayers, overlays, options);
     };
     var Zoom = Control.extend({
       // @section
@@ -14889,7 +15150,7 @@ var leafletSrc = { exports: {} };
     var attribution = function(options) {
       return new Attribution(options);
     };
-    Control.Layers = Layers;
+    Control.Layers = Layers2;
     Control.Zoom = Zoom;
     Control.Scale = Scale;
     Control.Attribution = Attribution;
