@@ -8867,6 +8867,17 @@ const Activity = createLucideIcon("Activity", [
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
+const AlertCircle = createLucideIcon("AlertCircle", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const AlertTriangle = createLucideIcon("AlertTriangle", [
   [
     "path",
@@ -8877,6 +8888,26 @@ const AlertTriangle = createLucideIcon("AlertTriangle", [
   ],
   ["path", { d: "M12 9v4", key: "juzpu7" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const ArrowLeft = createLucideIcon("ArrowLeft", [
+  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+  ["path", { d: "M19 12H5", key: "x3x0zl" }]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const ArrowRight = createLucideIcon("ArrowRight", [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
 ]);
 /**
  * @license lucide-react v0.294.0 - ISC
@@ -9221,6 +9252,21 @@ const Package = createLucideIcon("Package", [
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
+const Phone = createLucideIcon("Phone", [
+  [
+    "path",
+    {
+      d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
+      key: "foiqr5"
+    }
+  ]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const Printer = createLucideIcon("Printer", [
   ["polyline", { points: "6 9 6 2 18 2 18 9", key: "1306q4" }],
   [
@@ -9358,6 +9404,37 @@ const Sprout = createLucideIcon("Sprout", [
       key: "bkxnd2"
     }
   ]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Store = createLucideIcon("Store", [
+  ["path", { d: "m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7", key: "ztvudi" }],
+  ["path", { d: "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8", key: "1b2hhj" }],
+  ["path", { d: "M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4", key: "2ebpfo" }],
+  ["path", { d: "M2 7h20", key: "1fcdvo" }],
+  [
+    "path",
+    {
+      d: "M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7",
+      key: "jon5kx"
+    }
+  ]
+]);
+/**
+ * @license lucide-react v0.294.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Table = createLucideIcon("Table", [
+  ["path", { d: "M12 3v18", key: "108xh3" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "M3 15h18", key: "5xshup" }]
 ]);
 /**
  * @license lucide-react v0.294.0 - ISC
@@ -9605,6 +9682,76 @@ const LandingPage = () => {
         ] })
       ] })
     ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-24 bg-gradient-to-b from-[#0B1120] to-[#0f172a] border-y border-white/5 relative overflow-hidden", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "container mx-auto px-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col lg:flex-row items-center gap-16", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:w-1/2 space-y-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Map$1, { size: 14 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "State-wide Command Center" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-4xl md:text-5xl font-bold text-white leading-tight", children: [
+            "District-wise ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(GradientText, { children: "RiskGuard Coverage" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 text-lg leading-relaxed max-w-xl", children: "From Chennai to Kanyakumari, RiskGuard digitizes and secures the supply chain across all 38 districts of Tamil Nadu. Monitor stock health and logistical flow at a regional level." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-white/5 border border-white/5 space-y-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold text-emerald-400", children: "38" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-slate-500 font-bold uppercase tracking-wider", children: "Active Districts" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-white/5 border border-white/5 space-y-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold text-blue-400", children: "12,500+" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-slate-500 font-bold uppercase tracking-wider", children: "Fair Price Shops" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: () => navigate("/dashboard/districts"),
+              className: "group px-8 py-4 bg-white text-slate-900 font-bold rounded-xl transition-all hover:bg-emerald-50 flex items-center justify-center gap-2 shadow-xl hover:shadow-emerald-500/10",
+              children: [
+                "View District Dashboard",
+                /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-5 h-5 group-hover:translate-x-1 transition-transform" })
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:w-1/2 relative group", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-blue-500/20 blur-3xl rounded-full group-hover:bg-emerald-500/20 transition-colors duration-700" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 bg-[#1e293b]/50 border border-slate-700 rounded-3xl p-8 shadow-2xl backdrop-blur-sm overflow-hidden border-dashed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center mb-8", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-bold text-slate-500 uppercase", children: "Live Operations" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl font-bold text-white", children: "TN Regional Map" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2 text-[10px] font-bold", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-1 rounded bg-red-500/20 text-red-400 border border-red-500/30", children: "High Risk" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30", children: "Optimal" })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-4", children: [
+              { name: "Chennai", risk: 30, color: "bg-emerald-500" },
+              { name: "Madurai", risk: 72, color: "bg-amber-500" },
+              { name: "Thanjavur", risk: 85, color: "bg-red-500" },
+              { name: "Coimbatore", risk: 45, color: "bg-emerald-500" }
+            ].map((d, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 group/item", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-bold text-slate-300 w-24", children: d.name }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-2 bg-slate-700 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `h-full ${d.color} opacity-80 group-hover/item:opacity-100 transition-opacity`, style: { width: `${d.risk}%` } }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs font-mono text-slate-500", children: [
+                d.risk,
+                "%"
+              ] })
+            ] }, i)) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 pt-8 border-t border-slate-700/50 flex items-center justify-between text-slate-500", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs italic", children: "Syncing across 38 administrative hubs..." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { className: "text-slate-600", size: 16 })
+            ] })
+          ] })
+        ] })
+      ] }) })
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 relative overflow-hidden", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 right-0 w-1/3 h-full bg-emerald-500/5 blur-3xl rounded-full" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container mx-auto px-6 relative z-10", children: [
@@ -48582,6 +48729,428 @@ const StockLogistics = () => {
     ] })
   ] });
 };
+const mockDistricts = [
+  { id: "ari", name: "Ariyalur", hq: "Ariyalur", region: "North", risk: 45, alerts: 2, stock: 82, fps: 412, officer: "D. Rathinavel", contact: "04329-223XXX" },
+  { id: "cpt", name: "Chengalpattu", hq: "Chengalpattu", region: "North", risk: 78, alerts: 5, stock: 65, fps: 840, officer: "M. Lakshmi", contact: "044-274XXX" },
+  { id: "chn", name: "Chennai", hq: "Chennai", region: "North", risk: 30, alerts: 1, stock: 95, fps: 1560, officer: "S. Prakash", contact: "044-252XXX" },
+  { id: "cbe", name: "Coimbatore", hq: "Coimbatore", region: "West", risk: 55, alerts: 3, stock: 78, fps: 1120, officer: "K. Rajamani", contact: "0422-230XXX" },
+  { id: "cud", name: "Cuddalore", hq: "Cuddalore", region: "South", risk: 85, alerts: 8, stock: 52, fps: 980, officer: "T. Murugan", contact: "04142-220XXX" },
+  { id: "dpi", name: "Dharmapuri", hq: "Dharmapuri", region: "West", risk: 40, alerts: 1, stock: 88, fps: 620, officer: "V. Santhi", contact: "04342-230XXX" },
+  { id: "dgl", name: "Dindigul", hq: "Dindigul", region: "South", risk: 62, alerts: 4, stock: 70, fps: 890, officer: "P. Vijay", contact: "0451-246XXX" },
+  { id: "erd", name: "Erode", hq: "Erode", region: "West", risk: 48, alerts: 2, stock: 81, fps: 950, officer: "R. Kannan", contact: "0424-226XXX" },
+  { id: "klc", name: "Kallakurichi", hq: "Kallakurichi", region: "North", risk: 68, alerts: 5, stock: 68, fps: 580, officer: "S. Arumugam", contact: "04151-222XXX" },
+  { id: "kpm", name: "Kanchipuram", hq: "Kanchipuram", region: "North", risk: 52, alerts: 3, stock: 85, fps: 740, officer: "G. Selvi", contact: "044-272XXX" },
+  { id: "mdu", name: "Madurai", hq: "Madurai", region: "South", risk: 72, alerts: 6, stock: 62, fps: 1180, officer: "S. Kumar", contact: "0452-253XXX" },
+  { id: "nag", name: "Nagapattinam", hq: "Nagapattinam", region: "South", risk: 92, alerts: 12, stock: 45, fps: 640, officer: "L. Nirmala", contact: "04365-252XXX" },
+  { id: "slm", name: "Salem", hq: "Salem", region: "West", risk: 58, alerts: 4, stock: 76, fps: 1240, officer: "D. Mohan", contact: "0427-241XXX" },
+  { id: "tnj", name: "Thanjavur", hq: "Thanjavur", region: "South", risk: 75, alerts: 7, stock: 58, fps: 1040, officer: "V. Ramu", contact: "04362-230XXX" },
+  { id: "tri", name: "Tiruchirappalli", hq: "Tiruchirappalli", region: "South", risk: 50, alerts: 2, stock: 84, fps: 920, officer: "M. Sivakumar", contact: "0431-241XXX" },
+  { id: "tni", name: "Tirunelveli", hq: "Tirunelveli", region: "South", risk: 65, alerts: 5, stock: 72, fps: 860, officer: "K. Balaji", contact: "0462-250XXX" },
+  { id: "tyd", name: "Mayiladuthurai", hq: "Mayiladuthurai", region: "South", risk: 88, alerts: 9, stock: 48, fps: 520, officer: "A. Joseph", contact: "04364-222XXX" },
+  { id: "tup", name: "Tiruppur", hq: "Tiruppur", region: "West", risk: 42, alerts: 1, stock: 90, fps: 880, officer: "C. David", contact: "0421-297XXX" },
+  { id: "vlr", name: "Vellore", hq: "Vellore", region: "North", risk: 56, alerts: 3, stock: 79, fps: 720, officer: "P. Rani", contact: "0416-225XXX" },
+  { id: "vpm", name: "Viluppuram", hq: "Viluppuram", region: "North", risk: 82, alerts: 7, stock: 55, fps: 1080, officer: "M. Prabhu", contact: "04146-222XXX" },
+  { id: "tvr", name: "Thiruvarur", hq: "Thiruvarur", region: "South", risk: 86, alerts: 8, stock: 50, fps: 680, officer: "S. Mani", contact: "04366-223XXX" },
+  { id: "kkp", name: "Kanyakumari", hq: "Nagercoil", region: "South", risk: 35, alerts: 1, stock: 92, fps: 540, officer: "J. George", contact: "04652-231XXX" },
+  { id: "kar", name: "Karur", hq: "Karur", region: "West", risk: 44, alerts: 2, stock: 83, fps: 480, officer: "N. Devi", contact: "04324-255XXX" },
+  { id: "kri", name: "Krishnagiri", hq: "Krishnagiri", region: "West", risk: 46, alerts: 2, stock: 80, fps: 760, officer: "S. Raj", contact: "04343-239XXX" },
+  { id: "nmk", name: "Namakkal", hq: "Namakkal", region: "West", risk: 54, alerts: 3, stock: 77, fps: 620, officer: "T. Velu", contact: "04286-281XXX" },
+  { id: "nil", name: "Nilgiris", hq: "Ooty", region: "West", risk: 32, alerts: 1, stock: 94, fps: 380, officer: "R. Babu", contact: "0423-244XXX" },
+  { id: "per", name: "Perambalur", hq: "Perambalur", region: "South", risk: 49, alerts: 2, stock: 82, fps: 240, officer: "G. Kannagi", contact: "04328-224XXX" },
+  { id: "pud", name: "Pudukkottai", hq: "Pudukkottai", region: "South", risk: 66, alerts: 5, stock: 68, fps: 840, officer: "V. Chitra", contact: "04322-221XXX" },
+  { id: "ram", name: "Ramanathapuram", hq: "Ramanathapuram", region: "South", risk: 84, alerts: 9, stock: 53, fps: 780, officer: "K. Raja", contact: "04567-230XXX" },
+  { id: "rpt", name: "Ranipet", hq: "Ranipet", region: "North", risk: 60, alerts: 4, stock: 74, fps: 560, officer: "S. Uma", contact: "04172-273XXX" },
+  { id: "svg", name: "Sivaganga", hq: "Sivaganga", region: "South", risk: 64, alerts: 5, stock: 71, fps: 720, officer: "M. Pandi", contact: "04575-241XXX" },
+  { id: "tks", name: "Tenkasi", hq: "Tenkasi", region: "South", risk: 41, alerts: 1, stock: 89, fps: 420, officer: "R. Mala", contact: "04633-228XXX" },
+  { id: "the", name: "Theni", hq: "Theni", region: "South", risk: 43, alerts: 1, stock: 87, fps: 460, officer: "S. Ram", contact: "04546-253XXX" },
+  { id: "tho", name: "Thoothukudi", hq: "Thoothukudi", region: "South", risk: 76, alerts: 7, stock: 57, fps: 820, officer: "P. Selvam", contact: "0461-234XXX" },
+  { id: "tpt", name: "Tirupathur", hq: "Tirupathur", region: "North", risk: 59, alerts: 4, stock: 73, fps: 340, officer: "V. Latha", contact: "04179-222XXX" },
+  { id: "tvl", name: "Tiruvallur", hq: "Tiruvallur", region: "North", risk: 70, alerts: 6, stock: 64, fps: 1140, officer: "G. Kumar", contact: "044-276XXX" },
+  { id: "tvm", name: "Tiruvannamalai", hq: "Tiruvannamalai", region: "North", risk: 67, alerts: 5, stock: 69, fps: 960, officer: "M. Anbu", contact: "04175-233XXX" },
+  { id: "vnr", name: "Virudhunagar", hq: "Virudhunagar", region: "South", risk: 63, alerts: 5, stock: 72, fps: 880, officer: "S. Ganesan", contact: "04562-252XXX" }
+];
+const DistrictDashboard = () => {
+  const [searchTerm, setSearchTerm] = reactExports.useState("");
+  const [viewMode, setViewMode] = reactExports.useState("table");
+  const [filterRisk, setFilterRisk] = reactExports.useState("All");
+  const filteredDistricts = mockDistricts.filter((d) => {
+    const matchesSearch = d.name.toLowerCase().includes(searchTerm.toLowerCase()) || d.hq.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesRisk = filterRisk === "All" || filterRisk === "High" && d.risk > 70 || filterRisk === "Medium" && d.risk > 40 && d.risk <= 70 || filterRisk === "Low" && d.risk <= 40;
+    return matchesSearch && matchesRisk;
+  });
+  const getRiskColor = (score) => {
+    if (score > 70) return "text-red-600 bg-red-50 border-red-200";
+    if (score > 40) return "text-amber-600 bg-amber-50 border-amber-200";
+    return "text-green-600 bg-green-50 border-green-200";
+  };
+  const getRiskStatus = (score) => {
+    if (score > 70) return "High";
+    if (score > 40) return "Medium";
+    return "Low";
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row md:items-center justify-between gap-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl font-bold text-slate-800", children: "District-wise RiskGuard Coverage" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-500 text-sm", children: "Real-time metrics and risk assessment across all 38 districts of Tamil Nadu." })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex bg-white border border-slate-200 rounded-lg p-1 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            onClick: () => setViewMode("table"),
+            className: `flex items-center space-x-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${viewMode === "table" ? "bg-blue-600 text-white shadow-sm" : "text-slate-600 hover:bg-slate-50"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Table, { size: 16 }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Table View" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            onClick: () => setViewMode("map"),
+            className: `flex items-center space-x-2 px-4 py-1.5 rounded-md text-sm font-medium transition-all ${viewMode === "map" ? "bg-blue-600 text-white shadow-sm" : "text-slate-600 hover:bg-slate-50"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Map$1, { size: 16 }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Map View" })
+            ]
+          }
+        )
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row gap-4 items-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-1 w-full", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400", size: 18 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "input",
+          {
+            type: "text",
+            placeholder: "Search district or headquarters...",
+            className: "w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm",
+            value: searchTerm,
+            onChange: (e) => setSearchTerm(e.target.value)
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-2 w-full md:w-auto overflow-x-auto pb-1 md:pb-0", children: ["All", "High", "Medium", "Low"].map((risk) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          onClick: () => setFilterRisk(risk),
+          className: `px-4 py-2 rounded-lg text-sm font-medium border transition-all whitespace-nowrap ${filterRisk === risk ? "bg-slate-800 text-white border-slate-800" : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50"}`,
+          children: [
+            risk,
+            " Risk"
+          ]
+        },
+        risk
+      )) })
+    ] }),
+    viewMode === "table" ? (
+      /* Table View */
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm text-left", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { className: "bg-slate-50 text-slate-500 font-medium", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "px-6 py-4 border-b", children: "District / HQ" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "px-6 py-4 border-b", children: "Risk Score" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "px-6 py-4 border-b", children: "Active Alerts" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "px-6 py-4 border-b text-right", children: "Stock Level" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "px-6 py-4 border-b text-right", children: "Tot. FPS" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "px-6 py-4 border-b", children: "Last Updated" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "px-6 py-4 border-b text-center", children: "Actions" })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-slate-100", children: filteredDistricts.map((d) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "hover:bg-slate-50/50 transition-colors", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "px-6 py-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-slate-900", children: d.name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-slate-500 flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { size: 10 }),
+              " HQ: ",
+              d.hq
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `px-2 py-0.5 rounded-full text-[10px] font-bold border uppercase ${getRiskColor(d.risk)}`, children: getRiskStatus(d.risk) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono font-bold text-slate-700", children: d.risk })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-6 py-4", children: d.alerts > 5 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center text-red-600 font-medium gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(AlertCircle, { size: 14 }),
+            " ",
+            d.alerts,
+            " Alerts"
+          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center text-slate-600 gap-1", children: [
+            d.alerts > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(AlertCircle, { size: 14, className: "text-amber-500" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(CheckCircle2, { size: 14, className: "text-green-500" }),
+            d.alerts,
+            " Alerts"
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-6 py-4 text-right", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-bold text-slate-700", children: [
+              d.stock,
+              "%"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-20 h-1.5 bg-slate-100 rounded-full mt-1 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: `h-full rounded-full ${d.stock < 60 ? "bg-amber-500" : "bg-green-500"}`,
+                style: { width: `${d.stock}%` }
+              }
+            ) })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-6 py-4 text-right font-medium text-slate-600", children: d.fps.toLocaleString() }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-6 py-4 text-slate-400 text-xs italic", children: "Just Now" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Link,
+            {
+              to: `/dashboard/district/${d.id}`,
+              className: "flex items-center justify-center p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-all",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 18 })
+            }
+          ) })
+        ] }, d.id)) })
+      ] }) }) })
+    ) : (
+      /* Map View Placeholder */
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-slate-900 rounded-xl border border-slate-700 min-h-[600px] relative p-8 flex items-center justify-center overflow-hidden", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 opacity-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "w-full h-full", viewBox: "0 0 800 1000", fill: "none", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M400,100 L450,150 L420,200 L500,250 L480,300 L550,400 L500,500 L400,600 L300,550 L250,450 L200,350 L280,200 L350,150 Z", stroke: "white", strokeWidth: "2" }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "z-10 text-center max-w-md", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 mx-auto mb-6 border border-blue-500/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Map$1, { size: 40 }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold text-white mb-2", children: "Interactive District Map" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-400 mb-8", children: "Each district is color-coded by its calculated Risk Score. Hover for quick stats, click to drill down." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-2 mb-8", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-center", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-red-400 font-bold text-xl", children: "8" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-red-200/50 uppercase font-bold", children: "High Risk" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 bg-amber-500/20 border border-amber-500/30 rounded-lg text-center", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-amber-400 font-bold text-xl", children: "15" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-amber-200/50 uppercase font-bold", children: "Medium" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-center", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-green-400 font-bold text-xl", children: "15" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-green-200/50 uppercase font-bold", children: "Safe" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-blue-500/30", children: "Explore Detailed Map" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute bottom-6 right-6 p-4 bg-slate-800/80 backdrop-blur rounded-lg border border-white/5 space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3 h-3 bg-red-500 rounded" }),
+            " Critical (70+)"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3 h-3 bg-amber-500 rounded" }),
+            " Warning (40-70)"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3 h-3 bg-green-500 rounded" }),
+            " Stable (<40)"
+          ] })
+        ] })
+      ] })
+    )
+  ] });
+};
+const DistrictDetail = () => {
+  const { id: id2 } = useParams();
+  const district = mockDistricts.find((d) => d.id === id2);
+  if (!district) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-12 text-center space-y-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-400 font-bold text-xl text-center", children: "District Not Found" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/dashboard/districts", className: "text-blue-600 hover:underline", children: "Return to Gallery" })
+    ] });
+  }
+  const trendData = [
+    { name: "Mon", stock: 85, alert: 2 },
+    { name: "Tue", stock: 82, alert: 1 },
+    { name: "Wed", stock: 78, alert: 4 },
+    { name: "Thu", stock: 70, alert: 6 },
+    { name: "Fri", stock: 65, alert: 5 },
+    { name: "Sat", stock: 68, alert: 3 },
+    { name: "Sun", stock: 72, alert: 2 }
+  ];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      Link,
+      {
+        to: "/dashboard/districts",
+        className: "inline-flex items-center text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { size: 16, className: "mr-1" }),
+          " Back to District Dashboard"
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "text-3xl font-bold text-slate-900", children: [
+          district.name,
+          " District"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mt-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-slate-500 text-sm font-medium", children: [
+            "Headquarters: ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-slate-900", children: district.hq })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-4 w-px bg-slate-200" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-slate-500 text-sm font-medium", children: [
+            "Region: ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-slate-900", children: district.region })
+          ] })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `px-4 py-2 rounded-xl text-center border ${district.risk > 70 ? "bg-red-50 border-red-200" : "bg-green-50 border-green-200"}`, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] uppercase font-bold text-slate-400 tracking-wider", children: "Risk Score" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-2xl font-bold ${district.risk > 70 ? "text-red-600" : "text-green-600"}`, children: district.risk })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md hover:bg-blue-700 transition-all flex items-center gap-2", children: [
+          "Contact Officer ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { size: 16 })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center text-slate-400", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Package, { size: 20 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold uppercase tracking-widest text-[#10b981]", children: "Good" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-500 text-sm", children: "Stock Level (Overall)" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-3xl font-bold text-slate-900", children: [
+            district.stock,
+            "%"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-1.5 bg-slate-100 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full bg-emerald-500 rounded-full", style: { width: `${district.stock}%` } }) })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center text-slate-400", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Store, { size: 20 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold uppercase tracking-widest text-blue-500", children: "Active" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-500 text-sm", children: "Total Fair Price Shops" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-3xl font-bold text-slate-900", children: district.fps.toLocaleString() })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 text-xs text-blue-500 font-bold", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingUp, { size: 12 }),
+          " Syncing with ePDS"
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center text-slate-400", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AlertCircle, { size: 20 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-xs font-bold uppercase tracking-widest ${district.alerts > 5 ? "text-red-500" : "text-amber-500"}`, children: district.alerts > 5 ? "Immediate" : "Monitor" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-500 text-sm", children: "Active Alerts" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-3xl font-bold text-slate-900", children: district.alerts })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/dashboard/alerts", className: "text-xs text-blue-600 font-bold hover:underline flex items-center gap-1", children: [
+          "View Queue ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 12 })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center text-slate-400", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 20 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold uppercase tracking-widest", children: "Regional" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-500 text-sm", children: "Regional Officer" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg font-bold text-slate-900", children: district.officer })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-slate-500 flex items-center gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { size: 12 }),
+          " ",
+          district.contact
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-2 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold text-slate-800", children: "Operational Trends (7 Days)" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 text-xs font-semibold", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2 h-2 rounded bg-blue-500" }),
+              " Stock"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2 h-2 rounded bg-red-400" }),
+              " Alerts"
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-[300px]", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: "100%", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(AreaChart, { data: trendData, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("defs", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("linearGradient", { id: "colorStock", x1: "0", y1: "0", x2: "0", y2: "1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "5%", stopColor: "#3b82f6", stopOpacity: 0.1 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "95%", stopColor: "#3b82f6", stopOpacity: 0 })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", vertical: false, stroke: "#f1f5f9" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(XAxis, { dataKey: "name", axisLine: false, tickLine: false, tick: { fill: "#64748b", fontSize: 12 } }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { hide: true }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Tooltip,
+            {
+              contentStyle: { borderRadius: "12px", border: "none", boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Area, { type: "monotone", dataKey: "stock", stroke: "#3b82f6", strokeWidth: 3, fillOpacity: 1, fill: "url(#colorStock)" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Area, { type: "monotone", dataKey: "alert", stroke: "#f87171", strokeWidth: 2, fillOpacity: 0 })
+        ] }) }) })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-slate-900 p-8 rounded-2xl shadow-xl text-white space-y-6", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AlertCircle, { className: "text-emerald-400", size: 20 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold", children: "Action Items" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-4", children: [
+          { title: "Monsoon Preparedness", desc: "Secure godowns GDN001 & GDN004 against coastal flood warning.", urgent: true },
+          { title: "Stock Reconciliation", desc: "Cross-verify ePDS log discrepancy reported in Madurai HQ.", urgent: false },
+          { title: "Fleet Inspection", desc: "Audit 15 trucks scheduled for Thanjavur route movement.", urgent: false }
+        ].map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-start mb-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-bold text-sm", children: item.title }),
+            item.urgent && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-red-500 text-[10px] px-2 py-0.5 rounded-full font-bold", children: "URGENT" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-slate-400 leading-relaxed", children: item.desc })
+        ] }, i)) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "w-full py-3 bg-emerald-600 hover:bg-emerald-500 rounded-xl font-bold text-white text-sm transition-all shadow-lg hover:shadow-emerald-500/20 flex items-center justify-center gap-2", children: [
+          "Mark as Complete ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { size: 16 })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex border-b border-slate-100 bg-slate-50/50", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "px-8 py-4 text-sm font-bold text-blue-600 border-b-2 border-blue-600", children: [
+          "Fair Price Shops (",
+          district.fps,
+          ")"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "px-8 py-4 text-sm font-bold text-slate-400 hover:text-slate-600", children: "Godown Distribution" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "px-8 py-4 text-sm font-bold text-slate-400 hover:text-slate-600", children: "Transit Logs" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: [1, 2, 3, 4, 5, 6].map((i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 rounded-xl border border-slate-100 bg-slate-50/30 flex justify-between items-center group hover:bg-white hover:shadow-md transition-all border-dashed", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-slate-400 font-bold mb-1 uppercase tracking-wider", children: [
+            "FPS-TN-",
+            district.id.toUpperCase(),
+            "-",
+            i,
+            "04"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-bold text-slate-800", children: [
+            "Ration Shop Hub ",
+            i
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-emerald-600 font-medium", children: "Stock: Stable" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "text-slate-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all", size: 20 })
+      ] }, i)) }) })
+    ] })
+  ] });
+};
 class ErrorBoundary extends React$3.Component {
   constructor(props) {
     super(props);
@@ -48624,6 +49193,8 @@ function App() {
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { index: true, element: /* @__PURE__ */ jsxRuntimeExports.jsx(Navigate, { to: "overview", replace: true }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "overview", element: /* @__PURE__ */ jsxRuntimeExports.jsx(Overview, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "network", element: /* @__PURE__ */ jsxRuntimeExports.jsx(GodownNetwork, {}) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "districts", element: /* @__PURE__ */ jsxRuntimeExports.jsx(DistrictDashboard, {}) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "district/:id", element: /* @__PURE__ */ jsxRuntimeExports.jsx(DistrictDetail, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "inventory", element: /* @__PURE__ */ jsxRuntimeExports.jsx(InventoryAging, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "logistics", element: /* @__PURE__ */ jsxRuntimeExports.jsx(StockLogistics, {}) }),
       " ",
@@ -48636,4 +49207,4 @@ function App() {
 client.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React$3.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-BCWmAp5P.js.map
+//# sourceMappingURL=index-Ds5OO26V.js.map
