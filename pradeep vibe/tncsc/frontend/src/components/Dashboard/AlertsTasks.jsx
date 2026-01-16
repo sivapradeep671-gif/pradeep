@@ -11,8 +11,9 @@ import {
     MoreVertical,
     Filter
 } from 'lucide-react';
+import { api } from '../../services/api';
 
-const AlertItem = ({ type, title, location, date, status, priority, onClick, isActive }) => {
+const AlertItem = ({ title, location, date, priority, onClick, isActive }) => {
     const priorityColors = {
         Critical: 'bg-red-50 text-red-700 border-red-100',
         High: 'bg-orange-50 text-orange-700 border-orange-100',
@@ -50,7 +51,7 @@ const AlertItem = ({ type, title, location, date, status, priority, onClick, isA
     );
 };
 
-const TaskItem = ({ title, assignee, status, dueDate }) => {
+const TaskItem = ({ title, assignee, status }) => {
     return (
         <div className="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg">
             <div className="flex items-center gap-3">
@@ -70,14 +71,35 @@ const TaskItem = ({ title, assignee, status, dueDate }) => {
 };
 
 const AlertsTasks = () => {
-    const [activeAlert, setActiveAlert] = useState(1);
+    const [activeAlert, setActiveAlert] = useState(null);
+    const [alerts, setAlerts] = useState([]);
+    const [tasks, setTasks] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const alerts = [
-        { id: 1, priority: 'Critical', title: 'Excess Moisture Detected', location: 'Thanjavur Main Godown', date: '2 hrs ago', status: 'Open' },
-        { id: 2, priority: 'High', title: 'Aging Threshold Breached', location: 'Mannargudi G1', date: '5 hrs ago', status: 'In Progress' },
-        { id: 3, priority: 'Medium', title: 'Pest Control Overdue', location: 'Madurai North', date: '1 day ago', status: 'Open' },
-        { id: 4, priority: 'Medium', title: 'Stock Discrepancy', location: 'Trichy Buffer', date: '2 days ago', status: 'Resolved' },
-    ];
+    React.useEffect(() => {
+        const fetchAlerts = async () => {
+            try {
+                const res = await api.get('/alerts');
+                if (res.success && res.data) {
+                    setAlerts(res.data.alerts || []);
+                    setTasks(res.data.tasks || []);
+                    if (res.data.alerts && res.data.alerts.length > 0) {
+                        setActiveAlert(res.data.alerts[0].id);
+                    }
+                }
+            } catch (error) {
+                console.error("Failed to fetch alerts", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchAlerts();
+    }, []);
+
+    if (loading) return <div className="p-8 text-center">Loading Alerts...</div>;
+
+    // Find active alert details
+    const activeDetails = alerts.find(a => a.id === activeAlert);
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-140px)]">
@@ -103,72 +125,68 @@ const AlertsTasks = () => {
 
             {/* Right Column: Detail & Tasks */}
             <div className="lg:col-span-2 flex flex-col gap-6 h-full overflow-y-auto">
-                {/* Alert Detail Card */}
-                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div className="flex justify-between items-start mb-6">
-                        <div>
-                            <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Critical Alert</span>
-                                <span className="text-slate-400 text-sm">#ALT-2023-892</span>
-                            </div>
-                            <h1 className="text-xl font-bold text-slate-900">Excess Moisture Detected in Silo 4</h1>
-                            <p className="text-slate-500 mt-1 flex items-center gap-1">
-                                <MapPin size={14} /> Thanjavur Main Godown • Reported by IoT Sensor System
-                            </p>
-                        </div>
-                        <button className="p-2 hover:bg-slate-100 rounded-full text-slate-400">
-                            <MoreVertical size={20} />
-                        </button>
-                    </div>
-
-                    <div className="bg-slate-50 p-4 rounded-lg mb-6 text-sm text-slate-700 leading-relaxed border border-slate-100">
-                        <p>Moisture levels in Silo 4 have exceeded 14% for the last 6 hours. Immediate aeration required to prevent fungal growth. Estimated impacted stock: 500 MT of Paddy.</p>
-                    </div>
-
-                    <div className="flex gap-4">
-                        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Assign Inspection</button>
-                        <button className="bg-white border border-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50">Mark as False Alarm</button>
-                    </div>
-                </div>
-
-                {/* Tasks Section */}
-                <div className="bg-white rounded-xl border border-slate-200 shadow-sm flex-1 flex flex-col">
-                    <div className="p-4 border-b border-slate-100 flex justify-between items-center">
-                        <h3 className="font-bold text-slate-800">Related Tasks</h3>
-                        <button className="text-blue-600 text-sm font-medium hover:underline">+ New Task</button>
-                    </div>
-                    <div className="p-4 space-y-3 flex-1 overflow-y-auto">
-                        <TaskItem title="Conduct manual moisture test" assignee="R. Kumar (QM)" status="In Progress" />
-                        <TaskItem title="Verify aeration fan functionality" assignee="S. Singh (Tech)" status="Open" />
-                        <TaskItem title="Notify Regional Manager" assignee="System" status="Resolved" />
-                    </div>
-
-                    {/* Comment Section */}
-                    <div className="p-4 border-t border-slate-100 bg-slate-50">
-                        <h4 className="text-xs font-bold text-slate-500 uppercase mb-3">Comments</h4>
-                        <div className="space-y-4 mb-4">
-                            <div className="flex gap-3">
-                                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-xs font-bold">RK</div>
+                {activeDetails ? (
+                    <>
+                        {/* Alert Detail Card */}
+                        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                            <div className="flex justify-between items-start mb-6">
                                 <div>
-                                    <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                                        <p className="text-sm text-slate-700">I'm on my way to the site. Will update in 30 mins.</p>
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <span className={`text-xs font-bold px-2 py-1 rounded uppercase tracking-wide ${activeDetails.priority === 'Critical' ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                                            {activeDetails.priority} Alert
+                                        </span>
+                                        <span className="text-slate-400 text-sm">#{activeDetails.id}</span>
                                     </div>
-                                    <span className="text-xs text-slate-400 mt-1 pl-1">R. Kumar • 10 mins ago</span>
+                                    <h1 className="text-xl font-bold text-slate-900">{activeDetails.title}</h1>
+                                    <p className="text-slate-500 mt-1 flex items-center gap-1">
+                                        <MapPin size={14} /> {activeDetails.location} • Reported by IoT Sensor System
+                                    </p>
+                                </div>
+                                <button className="p-2 hover:bg-slate-100 rounded-full text-slate-400">
+                                    <MoreVertical size={20} />
+                                </button>
+                            </div>
+
+                            <div className="bg-slate-50 p-4 rounded-lg mb-6 text-sm text-slate-700 leading-relaxed border border-slate-100">
+                                <p>System detected {activeDetails.type} issue at {activeDetails.location}. Immediate attention required.</p>
+                            </div>
+
+                            <div className="flex gap-4">
+                                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Assign Inspection</button>
+                                <button className="bg-white border border-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50">Mark as False Alarm</button>
+                            </div>
+                        </div>
+
+                        {/* Tasks Section */}
+                        <div className="bg-white rounded-xl border border-slate-200 shadow-sm flex-1 flex flex-col">
+                            <div className="p-4 border-b border-slate-100 flex justify-between items-center">
+                                <h3 className="font-bold text-slate-800">Related Tasks</h3>
+                                <button className="text-blue-600 text-sm font-medium hover:underline">+ New Task</button>
+                            </div>
+                            <div className="p-4 space-y-3 flex-1 overflow-y-auto">
+                                {tasks.map(task => (
+                                    <TaskItem key={task.id} {...task} />
+                                ))}
+                            </div>
+                            {/* Comment Section placeholder (static for now) */}
+                            <div className="p-4 border-t border-slate-100 bg-slate-50">
+                                <h4 className="text-xs font-bold text-slate-500 uppercase mb-3">Comments</h4>
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        placeholder="Write a comment..."
+                                        className="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                    />
+                                    <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-600 hover:text-blue-700">
+                                        <Send size={16} />
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div className="relative">
-                            <input
-                                type="text"
-                                placeholder="Write a comment..."
-                                className="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                            />
-                            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-600 hover:text-blue-700">
-                                <Send size={16} />
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                    </>
+                ) : (
+                    <div className="flex items-center justify-center h-full text-slate-400">Select an alert to view details</div>
+                )}
             </div>
         </div>
     );

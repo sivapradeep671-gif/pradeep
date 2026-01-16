@@ -6,11 +6,18 @@ import AnalyticsDashboard from './Analytics/AnalyticsDashboard';
 import MovementDashboard from './Movement/MovementDashboard';
 import AdminPanel from './Admin/AdminPanel';
 import { useNavigate } from 'react-router-dom';
+import IncidentManagement from './HQ/IncidentManagement';
+import ReportingDashboard from './HQ/ReportingDashboard';
+import AuditTrail from './HQ/AuditTrail';
+import AddGodownModal from './HQ/AddGodownModal';
+import IntegrationsHub from './HQ/IntegrationsHub';
 
 const HQDashboard = () => {
     const { t, language, toggleLanguage } = useLanguage();
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('OVERVIEW');
+    const [showAddGodown, setShowAddGodown] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     return (
         <div className="flex h-screen bg-slate-50 font-sans text-slate-900">
@@ -32,16 +39,34 @@ const HQDashboard = () => {
                         {t('dashboard')}
                     </button>
                     <button
+                        onClick={() => setActiveTab('INCIDENTS')}
+                        className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${activeTab === 'INCIDENTS' ? 'bg-emerald-600 text-white shadow-lg' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}
+                    >
+                        ⚠️ Incident Management
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('REPORTS')}
+                        className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${activeTab === 'REPORTS' ? 'bg-emerald-600 text-white shadow-lg' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}
+                    >
+                        📊 Reporting & Exports
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('AUDIT')}
+                        className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${activeTab === 'AUDIT' ? 'bg-emerald-600 text-white shadow-lg' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}
+                    >
+                        📜 Audit Ledger
+                    </button>
+                    <button
                         onClick={() => setActiveTab('INVENTORY')}
                         className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${activeTab === 'INVENTORY' ? 'bg-emerald-600 text-white shadow-lg' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}
                     >
                         {t('inventory')}
                     </button>
                     <button
-                        onClick={() => setActiveTab('ANALYTICS')}
-                        className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${activeTab === 'ANALYTICS' ? 'bg-emerald-600 text-white shadow-lg' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}
+                        onClick={() => setActiveTab('INTEGRATIONS')}
+                        className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${activeTab === 'INTEGRATIONS' ? 'bg-emerald-600 text-white shadow-lg' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}
                     >
-                        {t('analytics')}
+                        🔗 System Integrations
                     </button>
                     <button
                         onClick={() => setActiveTab('MOVEMENT')}
@@ -65,7 +90,11 @@ const HQDashboard = () => {
                         {language === 'en' ? 'Switch to Tamil (தமிழ்)' : 'Switch to English'}
                     </button>
                     <button
-                        onClick={() => navigate('/')}
+                        onClick={() => {
+                            localStorage.removeItem('tncsc_user');
+                            localStorage.removeItem('tncsc_role');
+                            navigate('/');
+                        }}
                         className="w-full px-4 py-2 bg-slate-800 hover:bg-red-900/30 text-slate-400 hover:text-red-400 rounded-lg text-xs font-bold transition-colors flex items-center gap-2"
                     >
                         <span>←</span> {t('signOut')}
@@ -79,16 +108,18 @@ const HQDashboard = () => {
                 <header className="bg-white h-16 border-b border-slate-200 flex items-center justify-between px-8 shadow-sm z-10">
                     <h2 className="text-lg font-bold text-slate-800">
                         {activeTab === 'OVERVIEW' && t('riskMap')}
+                        {activeTab === 'INCIDENTS' && 'Incident Management'}
+                        {activeTab === 'REPORTS' && 'Reporting & Exports'}
+                        {activeTab === 'AUDIT' && 'Immutable Audit Ledger'}
                         {activeTab === 'INVENTORY' && t('inventory')}
-                        {activeTab === 'INVENTORY' && t('inventory')}
-                        {activeTab === 'ANALYTICS' && t('analytics')}
+                        {activeTab === 'INTEGRATIONS' && 'Government System Integrations'}
                         {activeTab === 'MOVEMENT' && (t('stockLogistics') || 'Stock & Logistics')}
                         {activeTab === 'ADMIN' && (t('adminPanel') || 'Administration')}
                     </h2>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
                             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                            <span className="text-xs font-bold text-slate-600">System Online</span>
+                            <span className="text-xs font-bold text-slate-600">Sync Active</span>
                         </div>
                         <div className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white shadow flex items-center justify-center font-bold text-slate-500 text-xs">
                             HQ
@@ -108,17 +139,17 @@ const HQDashboard = () => {
                                     <RiskMap />
                                     {/* Quick Stats Row */}
                                     <div className="grid grid-cols-3 gap-4">
-                                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                                            <div className="text-xs text-slate-500 mb-1">Total Stock</div>
-                                            <div className="text-xl font-bold text-slate-800">12,450 MT</div>
+                                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                                            <div className="text-[10px] text-slate-500 font-black uppercase mb-1 tracking-widest">Total Stock</div>
+                                            <div className="text-xl font-black text-slate-800">12,450 MT</div>
                                         </div>
-                                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                                            <div className="text-xs text-slate-500 mb-1">Active Alerts</div>
-                                            <div className="text-xl font-bold text-amber-600">3 High</div>
+                                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                                            <div className="text-[10px] text-slate-500 font-black uppercase mb-1 tracking-widest">Active Alerts</div>
+                                            <div className="text-xl font-black text-amber-600">3 High</div>
                                         </div>
-                                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                                            <div className="text-xs text-slate-500 mb-1">Weather</div>
-                                            <div className="text-xl font-bold text-blue-600">Raining</div>
+                                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                                            <div className="text-[10px] text-slate-500 font-black uppercase mb-1 tracking-widest">Weather Alert</div>
+                                            <div className="text-xl font-black text-blue-600">Monsoon Onset</div>
                                         </div>
                                     </div>
                                 </div>
@@ -127,15 +158,47 @@ const HQDashboard = () => {
                                 </div>
                             </div>
                         )}
+                        {activeTab === 'INCIDENTS' && <IncidentManagement />}
+                        {activeTab === 'REPORTS' && <ReportingDashboard />}
+                        {activeTab === 'AUDIT' && <AuditTrail />}
                         {activeTab === 'INVENTORY' && (
-                            <div className="bg-white rounded-xl shadow border border-slate-200 p-6 min-h-[500px]">
-                                <h3 className="text-lg font-bold mb-4">Godown Network Inventory</h3>
-                                <GodownList />
+                            <div className="bg-white rounded-3xl shadow border border-slate-200 overflow-hidden animate-slide-in">
+                                <div className="p-8 bg-slate-50/50 border-b flex justify-between items-center">
+                                    <div>
+                                        <h3 className="text-xl font-black text-slate-800 tracking-tight">Storage Network Infrastructure</h3>
+                                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Real-time facility status & alert monitoring</p>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <input
+                                            type="text"
+                                            placeholder="Search facilities..."
+                                            className="px-4 py-2 rounded-xl border-2 border-slate-200 text-xs font-bold outline-none focus:border-emerald-500 w-64 transition-all"
+                                            value={searchTerm}
+                                            onChange={e => setSearchTerm(e.target.value)}
+                                        />
+                                        <button
+                                            onClick={() => setShowAddGodown(true)}
+                                            className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg hover:scale-105 transition-all"
+                                        >
+                                            + Register Facility
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="p-4">
+                                    <GodownList searchTerm={searchTerm} />
+                                </div>
                             </div>
                         )}
-                        {activeTab === 'ANALYTICS' && (
-                            <AnalyticsDashboard />
+                        {showAddGodown && (
+                            <AddGodownModal
+                                onClose={() => setShowAddGodown(false)}
+                                onSave={() => {
+                                    setShowAddGodown(false);
+                                    // Normally trigger a refresh here
+                                }}
+                            />
                         )}
+                        {activeTab === 'INTEGRATIONS' && <IntegrationsHub />}
                         {activeTab === 'MOVEMENT' && <MovementDashboard />}
                         {activeTab === 'ADMIN' && <AdminPanel />}
                     </div>

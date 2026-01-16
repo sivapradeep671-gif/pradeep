@@ -1,8 +1,66 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { api } from '../services/api';
+import LoadingSpinner from './common/LoadingSpinner';
+
+// Risk Factor Component
+const RiskFactor = ({ label, level, details, icon }) => {
+    const getColor = (l) => {
+        if (l === 'Critical') return 'bg-red-100 text-red-700 border-red-200';
+        if (l === 'Moderate') return 'bg-orange-100 text-orange-700 border-orange-200';
+        return 'bg-emerald-100 text-emerald-700 border-emerald-200';
+    };
+
+    return (
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
+            <div className={`p-3 rounded-lg ${getColor(level)} bg-opacity-20`}>
+                <span className="text-xl">{icon}</span>
+            </div>
+            <div>
+                <h4 className="font-bold text-slate-800">{label}</h4>
+                <div className={`inline-block px-2 py-0.5 rounded text-xs font-bold mt-1 mb-2 ${getColor(level)}`}>
+                    {level} Risk
+                </div>
+                <p className="text-xs text-slate-500 leading-relaxed">{details}</p>
+            </div>
+        </div>
+    );
+};
+
+// Asset Inventory Component (New Phase 3)
+const AssetInventoryWidget = ({ assets }) => (
+    <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden h-fit mt-6">
+        <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+            <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                <span>📦</span> Asset Inventory
+            </h3>
+            <button className="text-xs text-blue-600 font-bold hover:underline">Request Stock</button>
+        </div>
+        <div className="divide-y divide-slate-100">
+            {assets.map((asset, index) => (
+                <div key={index} className="p-4 flex items-center justify-between">
+                    <div>
+                        <div className="font-bold text-slate-700 text-sm">{asset.name}</div>
+                        <div className="text-xs text-slate-500 mt-1">Required: {asset.required}</div>
+                    </div>
+                    <div className="text-right">
+                        <div className={`font-bold text-lg ${asset.current < asset.required ? 'text-red-600' : 'text-emerald-600'}`}>
+                            {asset.current}
+                        </div>
+                        <div className="text-[10px] font-bold text-slate-400 uppercase">Available</div>
+                    </div>
+                </div>
+            ))}
+        </div>
+        <div className="p-3 bg-red-50 text-red-700 text-xs font-bold text-center border-t border-red-100">
+            ⚠️ Low Stock Alert: Tarpaulins (15x30)
+        </div>
+    </div>
+);
 
 const GodownDetails = () => {
+    // ... existing hooks ...
     const { id } = useParams();
     const navigate = useNavigate();
     const { t } = useLanguage();
@@ -11,18 +69,34 @@ const GodownDetails = () => {
     const [movements, setMovements] = useState([]);
     const [rail, setRail] = useState([]);
 
+    // Mock Risk Factors (In real app, this comes from API)
+    const riskFactors = [
+        { label: 'Pest Control', level: 'Critical', icon: '🦗', details: 'Weevil infestation detected in Stack 4. Fumigation overdue by 5 days.' },
+        { label: 'Moisture Levels', level: 'Moderate', icon: '💧', details: 'Slight elevation in Sector B (13.5%). Requires aeration.' },
+        { label: 'Infrastructure', level: 'Low', icon: '🏗️', details: 'Roof integrity matches standards. No leaks reported in last rain.' },
+        { label: 'Stack Safety', level: 'Moderate', icon: '📦', details: 'Stack #12 leaning slightly. Needs restacking protocol.' }
+    ];
+
+    // Mock Assets for Inventory Widget
+    const assets = [
+        { name: 'Tarpaulins (15\'x30\')', current: 42, required: 60 },
+        { name: 'Moisture Meters', current: 5, required: 5 },
+        { name: 'Sprayers (Weedicide)', current: 2, required: 3 },
+        { name: 'Dunnage (Wooden)', current: 120, required: 150 },
+    ];
+
     useEffect(() => {
         // Fetch Godown Profile
-        fetch(`/api/godowns/${id}`).then(res => res.json()).then(setGodown);
+        api.get(`/api/godowns/${id}`).then(setGodown).catch(e => console.error(e));
         // Fetch Stock Lots
-        fetch(`/api/stock/lots/${id}`).then(res => res.json()).then(setLots);
+        api.get(`/api/stock/lots/${id}`).then(setLots).catch(e => console.error(e));
         // Fetch Recent Movement (Using outward as proxy for recent activity)
-        fetch('/api/movement/outward').then(res => res.json()).then(data => setMovements(data.slice(0, 3)));
+        api.get('/api/movement/outward').then(data => setMovements(data.slice(0, 3))).catch(e => console.error(e));
         // Fetch Rail (Mock filtering for dashboard widget)
-        fetch('/api/movement/rail').then(res => res.json()).then(data => setRail(data.slice(0, 2)));
+        api.get('/api/movement/rail').then(data => setRail(data.slice(0, 2))).catch(e => console.error(e));
     }, [id]);
 
-    if (!godown) return <div className="p-8 text-center">Loading Godown Details...</div>;
+    if (!godown) return <div className="min-h-screen flex items-center justify-center bg-slate-50"><LoadingSpinner text="Fetching Godown Details..." size="lg" /></div>;
 
     const getRiskColor = (risk) => {
         if (risk === 'High') return 'bg-red-500';
@@ -69,6 +143,20 @@ const GodownDetails = () => {
             </div>
 
             <div className="max-w-7xl mx-auto p-6 space-y-8">
+                {/* Risk Drill-Down Section (NEW) */}
+                <div>
+                    <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <span className="text-red-600">⚠️</span> Risk Factor Analysis
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {riskFactors.map((factor, index) => (
+                            <RiskFactor key={index} {...factor} />
+                        ))}
+                    </div>
+                    {/* Asset Inventory Widget (New Phase 3) */}
+                    <AssetInventoryWidget assets={assets} />
+                </div>
+
                 {/* Stats Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">

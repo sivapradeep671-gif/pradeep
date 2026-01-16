@@ -99,7 +99,7 @@ export const translations = {
         metric3: 'Value Protected',
 
         // Footer/About
-        metric3: 'Value Protected',
+
 
         // Roadmap
         roadmapTitle: 'Development Roadmap',
@@ -111,8 +111,8 @@ export const translations = {
         phase3Desc: 'Predictive AI Models for Spoilage & Demand Forecasting.',
 
         // Footer/About
-        builtBy: 'Built by Team Antigravity',
-        forSIH: 'For SIH 2024 / TNCSC',
+        builtBy: 'Built by Pradeep',
+        forSIH: '',
         contact: 'Contact Us',
         forms: 'Forms & Templates',
         escalation: 'Escalation Matrix',
@@ -286,8 +286,8 @@ export const translations = {
         phase3Desc: 'முன்னறிவிப்பு AI மாதிரிகள் மற்றும் தேவை கணிப்பு.',
 
         // Footer/About
-        builtBy: 'உருவாக்கியவர்: டீம் ஆன்டிகிராவிட்டி',
-        forSIH: 'SIH 2024 / TNCSC க்காக',
+        builtBy: 'உருவாக்கியவர்: பிரதீப்',
+        forSIH: '',
         contact: 'தொடர்புக்கு',
         forms: 'படிவங்கள் & வார்ப்புருக்கள்',
         escalation: 'பணி தீவிரப்படுத்தல் அணி',

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import FieldReportForm from './Forms/FieldReportForm';
@@ -17,6 +17,23 @@ const FieldDashboard = () => {
     const { t, language, toggleLanguage } = useLanguage();
     const navigate = useNavigate();
     const handleLogout = () => navigate('/');
+
+    const [filter, setFilter] = useState('All');
+    const [uploadedFile, setUploadedFile] = useState(null);
+    const [selectedTask, setSelectedTask] = useState(null);
+    const [remarks, setRemarks] = useState('');
+    const [showComplete, setShowComplete] = useState(false);
+    const [showUpload, setShowUpload] = useState(false);
+    const [showFieldReport, setShowFieldReport] = useState(false);
+    const [showWeekendReport, setShowWeekendReport] = useState(false);
+
+    const formatDate = (dateString) => {
+        return new Date(dateString).toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+    };
     // Mock Tasks for "Hero" Demo
     const [tasks, setTasks] = useState([
         {
@@ -182,9 +199,6 @@ const FieldDashboard = () => {
                         </div>
                         <h3 className="font-bold text-gray-800">{task.title}</h3>
                         <div className="flex items-center gap-2 mt-2 text-xs text-gray-500">
-                            import {formatDate} from '../utils/dateUtils';
-
-                            // ... inside render ...
                             <Icons.Clock />
                             <span>Due: {formatDate(task.dueDate)}</span>
                         </div>

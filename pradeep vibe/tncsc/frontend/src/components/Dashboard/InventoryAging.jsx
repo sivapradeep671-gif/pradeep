@@ -13,6 +13,7 @@ import {
     Cell
 } from 'recharts';
 import { Filter, Calendar, Download } from 'lucide-react';
+import { api } from '../../services/api';
 
 const CommodityCard = ({ name, totalStock, oldStock, days, color }) => (
     <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
@@ -41,19 +42,29 @@ const CommodityCard = ({ name, totalStock, oldStock, days, color }) => (
 );
 
 const InventoryAging = () => {
-    const agingData = [
-        { range: '0-3 Months', rice: 4500, wheat: 2400, paddy: 6700 },
-        { range: '3-6 Months', rice: 3200, wheat: 1800, paddy: 4100 },
-        { range: '6-9 Months', rice: 1800, wheat: 900, paddy: 2200 },
-        { range: '9-12 Months', rice: 800, wheat: 400, paddy: 1100 },
-        { range: '> 1 Year', rice: 200, wheat: 150, paddy: 600 },
-    ];
+    const [data, setData] = React.useState(null);
+    const [loading, setLoading] = React.useState(true);
 
-    const pieData = [
-        { name: 'Fresh Stock', value: 65, color: '#10b981' }, // Green
-        { name: 'Aging', value: 25, color: '#f59e0b' },      // Amber
-        { name: 'Critical', value: 10, color: '#ef4444' },   // Red
-    ];
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await api.get('/analytics/inventory');
+                if (res.success) {
+                    setData(res.data);
+                }
+            } catch (error) {
+                console.error("Failed to fetch inventory analytics", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+
+    if (loading) return <div className="p-8 text-center text-slate-500">Loading Inventory Data...</div>;
+    if (!data) return <div className="p-8 text-center text-red-500">Failed to load data</div>;
+
+    const { agingData, pieData, commodities, healthIndex, recommendation } = data;
 
     return (
         <div className="space-y-6">
@@ -80,10 +91,9 @@ const InventoryAging = () => {
 
             {/* Commodity Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <CommodityCard name="Paddy" totalStock="12,500" oldStock="12%" days="145" color="text-yellow-500" />
-                <CommodityCard name="Rice (Boiled)" totalStock="8,400" oldStock="5%" days="85" color="text-teal-500" />
-                <CommodityCard name="Wheat" totalStock="4,200" oldStock="2%" days="45" color="text-amber-700" />
-                <CommodityCard name="Sugar" totalStock="1,800" oldStock="0.5%" days="20" color="text-blue-500" />
+                {commodities.map((item, index) => (
+                    <CommodityCard key={index} {...item} />
+                ))}
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -131,13 +141,13 @@ const InventoryAging = () => {
                         </ResponsiveContainer>
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none mb-8">
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-slate-800">89%</div>
+                                <div className="text-3xl font-bold text-slate-800">{healthIndex}%</div>
                                 <div className="text-xs text-slate-500">Healthy</div>
                             </div>
                         </div>
                     </div>
                     <div className="w-full mt-4 p-4 bg-slate-50 rounded-lg text-sm text-slate-600">
-                        <p className="mb-2"><span className="font-semibold text-slate-900">Recommendation:</span> Prioritize dispatch of 200 MT Rice from Thanjavur Godown A due to aging &gt; 1 year.</p>
+                        <p className="mb-2"><span className="font-semibold text-slate-900">Recommendation:</span> {recommendation}</p>
                     </div>
                 </div>
             </div>

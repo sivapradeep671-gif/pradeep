@@ -11,10 +11,20 @@ import {
     X,
     User,
     LogOut,
-    Globe // Added Globe icon
+    Globe,
+
+    Truck, // Added Truck icon
+    Map, // Added Map icon for Fleet
+    AlertTriangle, // Loss Icon
+    Thermometer, // Quality Icon
+    Store, // Shop Icon
+    Trophy, // Performance Icon
+    FileText // Reports Icon
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext'; // Import context
+import logo from '../../assets/logo.png';
 
+// eslint-disable-next-line no-unused-vars
 const SidebarItem = ({ icon: Icon, label, path, isActive, onClick }) => (
     <Link
         to={path}
@@ -38,6 +48,13 @@ const DashboardLayout = () => {
         { icon: LayoutDashboard, label: 'navOverview', path: '/dashboard/overview' },
         { icon: Network, label: 'navNetwork', path: '/dashboard/network' },
         { icon: Package, label: 'navInventory', path: '/dashboard/inventory' },
+        { icon: AlertTriangle, label: 'Loss Analysis', path: '/dashboard/loss' }, // Feature 2
+        { icon: Thermometer, label: 'Quality Control', path: '/dashboard/quality' }, // Feature 3
+        { icon: Store, label: 'Ration Shop (Sim)', path: '/dashboard/shop' }, // Feature 4
+        { icon: Trophy, label: 'Officer Performance', path: '/dashboard/performance' }, // Feature 5
+        { icon: FileText, label: 'CAG Audit Reports', path: '/dashboard/reports' }, // Feature 6
+        { icon: Map, label: 'Fleet Tracking', path: '/dashboard/fleet' }, // New Fleet Item
+        { icon: Truck, label: 'Logistics', path: '/dashboard/logistics' }, // New Sidebar Item
         { icon: Bell, label: 'navAlerts', path: '/dashboard/alerts' },
         { icon: BarChart3, label: 'navAnalytics', path: '/dashboard/analytics' },
         { icon: Settings, label: 'navSettings', path: '/dashboard/settings' },
@@ -50,10 +67,8 @@ const DashboardLayout = () => {
             {/* Mobile Header */}
             <div className="md:hidden bg-white border-b p-4 flex justify-between items-center z-20">
                 <div className="flex items-center space-x-2">
-                    {/* Placeholder Logo */}
-                    <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold">
-                        T
-                    </div>
+                    {/* Logo */}
+                    <img src={logo} alt="TNCSC" className="w-8 h-8" />
                     <span className="font-bold text-slate-800">TNCSC RiskGuard</span>
                 </div>
                 <button onClick={toggleSidebar} className="p-2 text-slate-600 hover:bg-slate-100 rounded">
@@ -76,7 +91,7 @@ const DashboardLayout = () => {
             >
                 <div className="p-6 border-b flex items-center space-x-3">
                     <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/8/83/TamilNadu_Logo.svg"
+                        src={logo}
                         alt="TN Emblem"
                         className="w-10 h-10"
                     />
@@ -97,39 +112,40 @@ const DashboardLayout = () => {
                             onClick={() => setIsSidebarOpen(false)}
                         />
                     ))}
+                </nav>
 
 
-                    <div className="p-4 border-t bg-slate-50 mt-auto">
-                        {/* Language Switcher - Clean UI */}
-                        <div className="flex bg-white rounded-lg p-1 border border-slate-200 mb-4 shadow-sm">
-                            <button
-                                onClick={() => language !== 'en' && toggleLanguage()}
-                                className={`flex-1 text-xs font-bold py-1.5 rounded-md transition-all ${language === 'en' ? 'bg-slate-800 text-white shadow' : 'text-slate-500 hover:bg-slate-50'}`}
-                            >
-                                EN
-                            </button>
-                            <button
-                                onClick={() => language !== 'ta' && toggleLanguage()}
-                                className={`flex-1 text-xs font-bold py-1.5 rounded-md transition-all ${language === 'ta' ? 'bg-emerald-600 text-white shadow' : 'text-slate-500 hover:bg-slate-50'}`}
-                            >
-                                தமிழ்
-                            </button>
-                        </div>
-
-                        <div className="flex items-center space-x-3 mb-3">
-                            <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 border border-slate-300">
-                                <User size={20} />
-                            </div>
-                            <div className="overflow-hidden">
-                                <p className="font-bold text-sm text-slate-900 truncate">Regional Manager</p>
-                                <p className="text-xs text-slate-500 truncate">Thanjavur Region</p>
-                            </div>
-                        </div>
-                        <button className="flex items-center space-x-2 text-sm text-red-600 hover:text-red-700 w-full px-2 py-1.5 rounded hover:bg-red-50 transition-colors font-bold">
-                            <LogOut size={16} />
-                            <span>{t('signOut')}</span>
+                <div className="p-4 border-t bg-slate-50 mt-auto">
+                    {/* Language Switcher - Clean UI */}
+                    <div className="flex bg-white rounded-lg p-1 border border-slate-200 mb-4 shadow-sm">
+                        <button
+                            onClick={() => language !== 'en' && toggleLanguage()}
+                            className={`flex-1 text-xs font-bold py-1.5 rounded-md transition-all ${language === 'en' ? 'bg-slate-800 text-white shadow' : 'text-slate-500 hover:bg-slate-50'}`}
+                        >
+                            EN
+                        </button>
+                        <button
+                            onClick={() => language !== 'ta' && toggleLanguage()}
+                            className={`flex-1 text-xs font-bold py-1.5 rounded-md transition-all ${language === 'ta' ? 'bg-emerald-600 text-white shadow' : 'text-slate-500 hover:bg-slate-50'}`}
+                        >
+                            தமிழ்
                         </button>
                     </div>
+
+                    <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 border border-slate-300">
+                            <User size={20} />
+                        </div>
+                        <div className="overflow-hidden">
+                            <p className="font-bold text-sm text-slate-900 truncate">Regional Manager</p>
+                            <p className="text-xs text-slate-500 truncate">Thanjavur Region</p>
+                        </div>
+                    </div>
+                    <button className="flex items-center space-x-2 text-sm text-red-600 hover:text-red-700 w-full px-2 py-1.5 rounded hover:bg-red-50 transition-colors font-bold">
+                        <LogOut size={16} />
+                        <span>{t('signOut')}</span>
+                    </button>
+                </div>
             </aside>
 
             {/* Main Content */}

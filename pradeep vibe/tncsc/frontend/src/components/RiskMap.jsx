@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, CircleMarker, LayersControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useLanguage } from '../context/LanguageContext';
+
+import { api } from '../services/api';
 
 // Fix for default marker icon in React Leaflet
 import L from 'leaflet';
@@ -17,13 +18,13 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const RiskMap = () => {
-    const { t } = useLanguage();
+    // const { t } = useLanguage(); // Unused
     const [locations, setLocations] = useState([]);
 
     useEffect(() => {
-        fetch('/api/v1/godowns')
-            .then(res => res.json())
-            .then(response => {
+        const fetchLocations = async () => {
+            try {
+                const response = await api.get('/godowns');
                 if (response.success) {
                     const mappedData = response.data.map(g => ({
                         id: g.id,
@@ -36,8 +37,11 @@ const RiskMap = () => {
                     }));
                     setLocations(mappedData);
                 }
-            })
-            .catch(err => console.error(err));
+            } catch (err) {
+                console.error(err);
+            }
+        };
+        fetchLocations();
     }, []);
 
     const getColor = (risk) => {

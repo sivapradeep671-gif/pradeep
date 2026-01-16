@@ -12,5 +12,10 @@ export default defineConfig({
                 changeOrigin: true,
             }
         }
+    },
+    build: {
+        target: 'es2022',
+        minify: false,
+        sourcemap: true
     }
 })
